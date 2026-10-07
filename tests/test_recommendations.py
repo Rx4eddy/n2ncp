@@ -112,3 +112,32 @@ def test_prerequisite_gate(user, seeded):
     assert module.pk in completed_modules(user)
     # Deliberate exploration is always available with a topic filter.
     assert recommend(user, topic="dp")
+
+
+def test_seed_field_lengths_and_curriculum_dag(seeded):
+    from apps.practice.models import Exercise
+
+    for exercise in Exercise.objects.all():
+        exercise.full_clean()
+    visited, active = set(), set()
+
+    def visit(module):
+        assert module.pk not in active, "Prerequisites contain a cycle"
+        if module.pk in visited:
+            return
+        active.add(module.pk)
+        for previous in module.prerequisites.all():
+            visit(previous)
+        active.remove(module.pk)
+        visited.add(module.pk)
+
+    for module in Module.objects.all():
+        visit(module)
+
+
+def test_review_keeps_original_solve_date(user):
+    p = problem("A")
+    original = timezone.now() - timedelta(days=30)
+    JournalEntry.objects.create(user=user, problem=p, solved_at=original)
+    record_problem_attempt(user, p, "independent")
+    assert JournalEntry.objects.get(user=user, problem=p).solved_at == original

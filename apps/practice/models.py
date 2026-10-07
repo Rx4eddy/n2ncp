@@ -19,7 +19,7 @@ class Module(models.Model):
 
 class Exercise(models.Model):
     module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name="exercises")
-    slug = models.SlugField()
+    slug = models.SlugField(max_length=150)
     title = models.CharField(max_length=200)
     prompt = models.TextField()
     hints = models.JSONField(default=list)

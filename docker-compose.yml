@@ -4,6 +4,7 @@ x-app: &app
     context: .
     target: development
   env_file: .env
+  user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
   environment:
     DEBUG: "1"
     DATABASE_URL: postgresql://${POSTGRES_USER:-n2ncp}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/${POSTGRES_DB:-n2ncp}

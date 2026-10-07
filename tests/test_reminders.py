@@ -146,3 +146,42 @@ def test_worker_crash_quarantined(user):
     dispatch_outbox()
     item.refresh_from_db()
     assert item.status == "uncertain"
+
+
+@pytest.mark.django_db(transaction=True)
+def test_postgres_concurrent_workers_claim_once(user):
+    from concurrent.futures import ThreadPoolExecutor
+    from threading import Event
+
+    from django.db import close_old_connections, connection
+
+    if connection.vendor != "postgresql":
+        pytest.skip("Row-locking concurrency is validated on PostgreSQL")
+    item = ready_reminder(user)
+    sending, release = Event(), Event()
+
+    def send_once(*args, **kwargs):
+        sending.set()
+        assert release.wait(5)
+        return 1
+
+    def run():
+        close_old_connections()
+        try:
+            deliver_email(item.pk)
+        finally:
+            close_old_connections()
+
+    with patch("apps.notifications.tasks.EmailMessage.send", side_effect=send_once) as send:
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            first = pool.submit(run)
+            assert sending.wait(5)
+            second = pool.submit(run)
+            try:
+                second.result(timeout=5)
+            finally:
+                release.set()
+            first.result(timeout=5)
+        assert send.call_count == 1
+    item.refresh_from_db()
+    assert item.status == "sent"

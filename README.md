@@ -58,6 +58,8 @@ docker compose exec web python manage.py seed
 
 The initial calendar is intentionally empty until external synchronization succeeds. No demo contests, fake user progress, or default passwords are installed.
 
+On Linux, set `LOCAL_UID` and `LOCAL_GID` in `.env` to `id -u` and `id -g` if they differ from 1000. Development containers use those IDs to read/write the bind-mounted checkout; production uses the fixed non-root application user.
+
 Code changes reload in the development web process. Rebuild CSS/JS with `docker compose run --rm assets`. Restart the worker after changing task code. `docker compose down` preserves data volumes; **`down -v` deletes them**.
 
 ## Running tests

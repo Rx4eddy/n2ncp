@@ -164,3 +164,17 @@ def test_streak_uses_local_days(user):
     with patch("apps.journal.services.timezone.now", return_value=now):
         stats = analytics(user)
     assert stats["streak"] == 3 and stats["total"] == 3
+
+
+def test_malformed_practice_target_rejected(logged_client):
+    assert (
+        logged_client.post(
+            "/practice/attempt/", {"problem": "not-an-id", "outcome": "independent"}
+        ).status_code
+        == 400
+    )
+
+
+def test_reset_page_has_actual_form(client):
+    body = client.get("/accounts/password/reset/").content.decode()
+    assert 'name="email"' in body and 'type="submit"' in body
