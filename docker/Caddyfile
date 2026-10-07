@@ -1,0 +1,12 @@
+{
+    email {$ACME_EMAIL}
+}
+{$DOMAIN} {
+    encode zstd gzip
+    # Caddy replaces inbound forwarding headers. Gunicorn must stay private.
+    reverse_proxy web:8000 {
+        header_up X-Real-IP {remote_host}
+    }
+    header -Server
+    # Application access logs omit query strings. Do not log reset/unsubscribe tokens.
+}

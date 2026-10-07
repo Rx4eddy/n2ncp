@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+node_modules/
+static/vendor/
+static/app.css
+staticfiles/
+*.sqlite3
+*.sqlite3-*
+*.log

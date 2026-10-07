@@ -1,0 +1,80 @@
+name: n2ncp-dev
+x-app: &app
+  build:
+    context: .
+    target: development
+  env_file: .env
+  environment:
+    DEBUG: "1"
+    DATABASE_URL: postgresql://${POSTGRES_USER:-n2ncp}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/${POSTGRES_DB:-n2ncp}
+    REDIS_URL: redis://redis:6379/0
+    EMAIL_HOST: mailpit
+    EMAIL_PORT: "1025"
+    EMAIL_USE_TLS: "0"
+  volumes:
+    - .:/app
+  init: true
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-n2ncp}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-n2ncp}
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  redis:
+    image: redis:7-alpine
+    command: [redis-server, --appendonly, 'yes', --maxmemory-policy, noeviction]
+    volumes: [redis_data:/data]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  mailpit:
+    image: axllent/mailpit:v1.27
+    ports: ['127.0.0.1:8025:8025']
+  assets:
+    image: node:22-alpine
+    working_dir: /app
+    volumes: ['.:/app', 'node_modules:/app/node_modules']
+    command: [sh, -c, 'npm ci --no-audit --no-fund && npm run build']
+  init:
+    <<: *app
+    command: [sh, -c, 'python manage.py migrate --noinput && python manage.py seed']
+    depends_on:
+      db: {condition: service_healthy}
+      redis: {condition: service_healthy}
+      assets: {condition: service_completed_successfully}
+  web:
+    <<: *app
+    ports: ['127.0.0.1:8000:8000']
+    command: [python, manage.py, runserver, '0.0.0.0:8000']
+    depends_on:
+      init: {condition: service_completed_successfully}
+      mailpit: {condition: service_started}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/', timeout=5)"]
+      interval: 15s
+      timeout: 6s
+      retries: 10
+  worker:
+    <<: *app
+    command: [celery, -A, config, worker, --loglevel=INFO, --concurrency=2]
+    depends_on:
+      init: {condition: service_completed_successfully}
+      mailpit: {condition: service_started}
+  beat:
+    <<: *app
+    command: [celery, -A, config, beat, --loglevel=INFO, --schedule=/tmp/celerybeat-schedule]
+    depends_on:
+      init: {condition: service_completed_successfully}
+volumes:
+  postgres_data:
+  redis_data:
+  node_modules:

@@ -1,0 +1,94 @@
+name: n2ncp
+x-app: &app
+  image: n2ncp:${IMAGE_TAG:-local}
+  build:
+    context: .
+    target: production
+  env_file: .env
+  environment:
+    DEBUG: "0"
+    DATABASE_URL: postgresql://${POSTGRES_USER:-n2ncp}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/${POSTGRES_DB:-n2ncp}
+    REDIS_URL: redis://redis:6379/0
+  restart: unless-stopped
+  init: true
+  read_only: true
+  tmpfs: [/tmp]
+  security_opt: [no-new-privileges:true]
+  cap_drop: [ALL]
+  logging:
+    driver: json-file
+    options: {max-size: 10m, max-file: '3'}
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-n2ncp}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-n2ncp}
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: [redis-server, --appendonly, 'yes', --maxmemory-policy, noeviction]
+    volumes: [redis_data:/data]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  init:
+    <<: *app
+    restart: 'no'
+    command: [sh, -c, 'python manage.py migrate --noinput && python manage.py seed']
+    depends_on:
+      db: {condition: service_healthy}
+      redis: {condition: service_healthy}
+  web:
+    <<: *app
+    command: [gunicorn, 'config.wsgi:application', --bind, '0.0.0.0:8000', --workers, '${WEB_WORKERS:-2}', --threads, '4', --timeout, '60', --access-logfile, '-', --error-logfile, '-', --access-logformat, '%(h)s %(m)s %(s)s %(L)s']
+    expose: ['8000']
+    depends_on:
+      init: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen(urllib.request.Request('http://127.0.0.1:8000/health/', headers={'Host': __import__('os').environ['DOMAIN']}), timeout=5)"]
+      interval: 15s
+      timeout: 6s
+      retries: 10
+  worker:
+    <<: *app
+    command: [celery, -A, config, worker, --loglevel=INFO, --concurrency=2]
+    depends_on:
+      init: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD-SHELL, 'celery -A config inspect ping -d celery@$${HOSTNAME} --timeout=5 | grep -q pong']
+      interval: 60s
+      timeout: 10s
+      retries: 3
+  beat:
+    <<: *app
+    command: [celery, -A, config, beat, --loglevel=INFO, --schedule=/var/run/celery/schedule]
+    volumes: [beat_data:/var/run/celery]
+    depends_on:
+      init: {condition: service_completed_successfully}
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN to your public hostname}
+      ACME_EMAIL: ${ACME_EMAIL:?Set ACME_EMAIL}
+    ports: ['80:80', '443:443', '443:443/udp']
+    volumes: ['./docker/Caddyfile:/etc/caddy/Caddyfile:ro', 'caddy_data:/data', 'caddy_config:/config']
+    depends_on:
+      web: {condition: service_healthy}
+volumes:
+  postgres_data:
+  redis_data:
+  beat_data:
+  caddy_data:
+  caddy_config:

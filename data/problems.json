@@ -1,0 +1,2746 @@
+[
+  {
+    "platform": "cses",
+    "problem_id": "1068",
+    "title": "Weird Algorithm",
+    "url": "https://cses.fi/problemset/task/1068",
+    "difficulty": 1,
+    "topics": [
+      "stl",
+      "math"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1083",
+    "title": "Missing Number",
+    "url": "https://cses.fi/problemset/task/1083",
+    "difficulty": 1,
+    "topics": [
+      "arrays",
+      "math"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1069",
+    "title": "Repetitions",
+    "url": "https://cses.fi/problemset/task/1069",
+    "difficulty": 1,
+    "topics": [
+      "strings"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1094",
+    "title": "Increasing Array",
+    "url": "https://cses.fi/problemset/task/1094",
+    "difficulty": 1,
+    "topics": [
+      "arrays",
+      "greedy"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1070",
+    "title": "Permutations",
+    "url": "https://cses.fi/problemset/task/1070",
+    "difficulty": 1,
+    "topics": [
+      "math",
+      "greedy"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1071",
+    "title": "Number Spiral",
+    "url": "https://cses.fi/problemset/task/1071",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1072",
+    "title": "Two Knights",
+    "url": "https://cses.fi/problemset/task/1072",
+    "difficulty": 2,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1092",
+    "title": "Two Sets",
+    "url": "https://cses.fi/problemset/task/1092",
+    "difficulty": 2,
+    "topics": [
+      "greedy",
+      "math"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1617",
+    "title": "Bit Strings",
+    "url": "https://cses.fi/problemset/task/1617",
+    "difficulty": 1,
+    "topics": [
+      "bit-manipulation",
+      "math"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1618",
+    "title": "Trailing Zeros",
+    "url": "https://cses.fi/problemset/task/1618",
+    "difficulty": 1,
+    "topics": [
+      "number-theory"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1754",
+    "title": "Coin Piles",
+    "url": "https://cses.fi/problemset/task/1754",
+    "difficulty": 2,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1755",
+    "title": "Palindrome Reorder",
+    "url": "https://cses.fi/problemset/task/1755",
+    "difficulty": 2,
+    "topics": [
+      "strings",
+      "frequency-counting"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "2205",
+    "title": "Gray Code",
+    "url": "https://cses.fi/problemset/task/2205",
+    "difficulty": 2,
+    "topics": [
+      "bit-manipulation"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "2165",
+    "title": "Tower of Hanoi",
+    "url": "https://cses.fi/problemset/task/2165",
+    "difficulty": 2,
+    "topics": [
+      "recursion"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1622",
+    "title": "Creating Strings",
+    "url": "https://cses.fi/problemset/task/1622",
+    "difficulty": 2,
+    "topics": [
+      "backtracking",
+      "strings"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1623",
+    "title": "Apple Division",
+    "url": "https://cses.fi/problemset/task/1623",
+    "difficulty": 2,
+    "topics": [
+      "backtracking",
+      "bit-manipulation"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1624",
+    "title": "Chessboard and Queens",
+    "url": "https://cses.fi/problemset/task/1624",
+    "difficulty": 3,
+    "topics": [
+      "backtracking"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1621",
+    "title": "Distinct Numbers",
+    "url": "https://cses.fi/problemset/task/1621",
+    "difficulty": 1,
+    "topics": [
+      "stl",
+      "sorting"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1084",
+    "title": "Apartments",
+    "url": "https://cses.fi/problemset/task/1084",
+    "difficulty": 2,
+    "topics": [
+      "two-pointers",
+      "sorting"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1090",
+    "title": "Ferris Wheel",
+    "url": "https://cses.fi/problemset/task/1090",
+    "difficulty": 2,
+    "topics": [
+      "two-pointers",
+      "greedy"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1091",
+    "title": "Concert Tickets",
+    "url": "https://cses.fi/problemset/task/1091",
+    "difficulty": 2,
+    "topics": [
+      "stl",
+      "binary-search"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1619",
+    "title": "Restaurant Customers",
+    "url": "https://cses.fi/problemset/task/1619",
+    "difficulty": 2,
+    "topics": [
+      "intervals",
+      "sorting"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1629",
+    "title": "Movie Festival",
+    "url": "https://cses.fi/problemset/task/1629",
+    "difficulty": 2,
+    "topics": [
+      "intervals",
+      "greedy"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1640",
+    "title": "Sum of Two Values",
+    "url": "https://cses.fi/problemset/task/1640",
+    "difficulty": 1,
+    "topics": [
+      "two-pointers",
+      "arrays"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1643",
+    "title": "Maximum Subarray Sum",
+    "url": "https://cses.fi/problemset/task/1643",
+    "difficulty": 2,
+    "topics": [
+      "dp",
+      "arrays"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1074",
+    "title": "Stick Lengths",
+    "url": "https://cses.fi/problemset/task/1074",
+    "difficulty": 2,
+    "topics": [
+      "sorting",
+      "greedy"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1632",
+    "title": "Movie Festival II",
+    "url": "https://cses.fi/problemset/task/1632",
+    "difficulty": 3,
+    "topics": [
+      "intervals",
+      "stl"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1073",
+    "title": "Towers",
+    "url": "https://cses.fi/problemset/task/1073",
+    "difficulty": 2,
+    "topics": [
+      "binary-search",
+      "stl"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1163",
+    "title": "Traffic Lights",
+    "url": "https://cses.fi/problemset/task/1163",
+    "difficulty": 3,
+    "topics": [
+      "stl",
+      "intervals"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1620",
+    "title": "Factory Machines",
+    "url": "https://cses.fi/problemset/task/1620",
+    "difficulty": 2,
+    "topics": [
+      "binary-search-answer"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1630",
+    "title": "Tasks and Deadlines",
+    "url": "https://cses.fi/problemset/task/1630",
+    "difficulty": 2,
+    "topics": [
+      "greedy",
+      "sorting"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1631",
+    "title": "Reading Books",
+    "url": "https://cses.fi/problemset/task/1631",
+    "difficulty": 2,
+    "topics": [
+      "greedy"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1641",
+    "title": "Sum of Three Values",
+    "url": "https://cses.fi/problemset/task/1641",
+    "difficulty": 2,
+    "topics": [
+      "two-pointers"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1642",
+    "title": "Sum of Four Values",
+    "url": "https://cses.fi/problemset/task/1642",
+    "difficulty": 3,
+    "topics": [
+      "hashing"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1645",
+    "title": "Nearest Smaller Values",
+    "url": "https://cses.fi/problemset/task/1645",
+    "difficulty": 2,
+    "topics": [
+      "monotonic-stack"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1660",
+    "title": "Subarray Sums I",
+    "url": "https://cses.fi/problemset/task/1660",
+    "difficulty": 2,
+    "topics": [
+      "sliding-window"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1661",
+    "title": "Subarray Sums II",
+    "url": "https://cses.fi/problemset/task/1661",
+    "difficulty": 3,
+    "topics": [
+      "prefix-sums",
+      "hashing"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1662",
+    "title": "Subarray Divisibility",
+    "url": "https://cses.fi/problemset/task/1662",
+    "difficulty": 3,
+    "topics": [
+      "prefix-sums",
+      "number-theory"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1085",
+    "title": "Array Division",
+    "url": "https://cses.fi/problemset/task/1085",
+    "difficulty": 3,
+    "topics": [
+      "binary-search-answer"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1076",
+    "title": "Sliding Window Median",
+    "url": "https://cses.fi/problemset/task/1076",
+    "difficulty": 3,
+    "topics": [
+      "sliding-window",
+      "stl"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1077",
+    "title": "Sliding Window Cost",
+    "url": "https://cses.fi/problemset/task/1077",
+    "difficulty": 4,
+    "topics": [
+      "sliding-window",
+      "stl"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1141",
+    "title": "Playlist",
+    "url": "https://cses.fi/problemset/task/1141",
+    "difficulty": 2,
+    "topics": [
+      "sliding-window",
+      "frequency-counting"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1633",
+    "title": "Dice Combinations",
+    "url": "https://cses.fi/problemset/task/1633",
+    "difficulty": 2,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1634",
+    "title": "Minimizing Coins",
+    "url": "https://cses.fi/problemset/task/1634",
+    "difficulty": 2,
+    "topics": [
+      "dp",
+      "knapsack"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1635",
+    "title": "Coin Combinations I",
+    "url": "https://cses.fi/problemset/task/1635",
+    "difficulty": 2,
+    "topics": [
+      "dp",
+      "knapsack"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1636",
+    "title": "Coin Combinations II",
+    "url": "https://cses.fi/problemset/task/1636",
+    "difficulty": 2,
+    "topics": [
+      "dp",
+      "knapsack"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1637",
+    "title": "Removing Digits",
+    "url": "https://cses.fi/problemset/task/1637",
+    "difficulty": 2,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1638",
+    "title": "Grid Paths I",
+    "url": "https://cses.fi/problemset/task/1638",
+    "difficulty": 2,
+    "topics": [
+      "grid-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1158",
+    "title": "Book Shop",
+    "url": "https://cses.fi/problemset/task/1158",
+    "difficulty": 2,
+    "topics": [
+      "knapsack"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1746",
+    "title": "Array Description",
+    "url": "https://cses.fi/problemset/task/1746",
+    "difficulty": 3,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "2413",
+    "title": "Counting Towers",
+    "url": "https://cses.fi/problemset/task/2413",
+    "difficulty": 3,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1639",
+    "title": "Edit Distance",
+    "url": "https://cses.fi/problemset/task/1639",
+    "difficulty": 3,
+    "topics": [
+      "subsequence-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1744",
+    "title": "Rectangle Cutting",
+    "url": "https://cses.fi/problemset/task/1744",
+    "difficulty": 3,
+    "topics": [
+      "interval-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1745",
+    "title": "Money Sums",
+    "url": "https://cses.fi/problemset/task/1745",
+    "difficulty": 2,
+    "topics": [
+      "knapsack"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1097",
+    "title": "Removal Game",
+    "url": "https://cses.fi/problemset/task/1097",
+    "difficulty": 3,
+    "topics": [
+      "interval-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1093",
+    "title": "Two Sets II",
+    "url": "https://cses.fi/problemset/task/1093",
+    "difficulty": 3,
+    "topics": [
+      "knapsack"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1145",
+    "title": "Increasing Subsequence",
+    "url": "https://cses.fi/problemset/task/1145",
+    "difficulty": 2,
+    "topics": [
+      "lis"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1140",
+    "title": "Projects",
+    "url": "https://cses.fi/problemset/task/1140",
+    "difficulty": 3,
+    "topics": [
+      "dp",
+      "binary-search"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1653",
+    "title": "Elevator Rides",
+    "url": "https://cses.fi/problemset/task/1653",
+    "difficulty": 4,
+    "topics": [
+      "bitmask-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "2181",
+    "title": "Counting Tilings",
+    "url": "https://cses.fi/problemset/task/2181",
+    "difficulty": 4,
+    "topics": [
+      "bitmask-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "2220",
+    "title": "Counting Numbers",
+    "url": "https://cses.fi/problemset/task/2220",
+    "difficulty": 4,
+    "topics": [
+      "digit-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1666",
+    "title": "Building Roads",
+    "url": "https://cses.fi/problemset/task/1666",
+    "difficulty": 2,
+    "topics": [
+      "dsu",
+      "graph-traversal"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1192",
+    "title": "Counting Rooms",
+    "url": "https://cses.fi/problemset/task/1192",
+    "difficulty": 2,
+    "topics": [
+      "graph-traversal"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1193",
+    "title": "Labyrinth",
+    "url": "https://cses.fi/problemset/task/1193",
+    "difficulty": 2,
+    "topics": [
+      "bfs"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1667",
+    "title": "Message Route",
+    "url": "https://cses.fi/problemset/task/1667",
+    "difficulty": 2,
+    "topics": [
+      "bfs"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1668",
+    "title": "Building Teams",
+    "url": "https://cses.fi/problemset/task/1668",
+    "difficulty": 2,
+    "topics": [
+      "bipartite"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1669",
+    "title": "Round Trip",
+    "url": "https://cses.fi/problemset/task/1669",
+    "difficulty": 3,
+    "topics": [
+      "cycles"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1194",
+    "title": "Monsters",
+    "url": "https://cses.fi/problemset/task/1194",
+    "difficulty": 3,
+    "topics": [
+      "bfs"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1671",
+    "title": "Shortest Routes I",
+    "url": "https://cses.fi/problemset/task/1671",
+    "difficulty": 3,
+    "topics": [
+      "shortest-path"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1672",
+    "title": "Shortest Routes II",
+    "url": "https://cses.fi/problemset/task/1672",
+    "difficulty": 3,
+    "topics": [
+      "shortest-path"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1673",
+    "title": "High Score",
+    "url": "https://cses.fi/problemset/task/1673",
+    "difficulty": 4,
+    "topics": [
+      "shortest-path"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1195",
+    "title": "Flight Discount",
+    "url": "https://cses.fi/problemset/task/1195",
+    "difficulty": 3,
+    "topics": [
+      "shortest-path"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1197",
+    "title": "Cycle Finding",
+    "url": "https://cses.fi/problemset/task/1197",
+    "difficulty": 3,
+    "topics": [
+      "cycles",
+      "shortest-path"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1196",
+    "title": "Flight Routes",
+    "url": "https://cses.fi/problemset/task/1196",
+    "difficulty": 4,
+    "topics": [
+      "shortest-path"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1678",
+    "title": "Round Trip II",
+    "url": "https://cses.fi/problemset/task/1678",
+    "difficulty": 3,
+    "topics": [
+      "cycles"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1679",
+    "title": "Course Schedule",
+    "url": "https://cses.fi/problemset/task/1679",
+    "difficulty": 2,
+    "topics": [
+      "topological-sort"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1680",
+    "title": "Longest Flight Route",
+    "url": "https://cses.fi/problemset/task/1680",
+    "difficulty": 3,
+    "topics": [
+      "dag-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1681",
+    "title": "Game Routes",
+    "url": "https://cses.fi/problemset/task/1681",
+    "difficulty": 3,
+    "topics": [
+      "dag-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1202",
+    "title": "Investigation",
+    "url": "https://cses.fi/problemset/task/1202",
+    "difficulty": 4,
+    "topics": [
+      "shortest-path",
+      "dag-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1750",
+    "title": "Planets Queries I",
+    "url": "https://cses.fi/problemset/task/1750",
+    "difficulty": 3,
+    "topics": [
+      "binary-lifting"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1135",
+    "title": "Distance Queries",
+    "url": "https://cses.fi/problemset/task/1135",
+    "difficulty": 3,
+    "topics": [
+      "lca"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1675",
+    "title": "Road Reparation",
+    "url": "https://cses.fi/problemset/task/1675",
+    "difficulty": 3,
+    "topics": [
+      "mst",
+      "dsu"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1676",
+    "title": "Road Construction",
+    "url": "https://cses.fi/problemset/task/1676",
+    "difficulty": 2,
+    "topics": [
+      "dsu"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1682",
+    "title": "Flight Routes Check",
+    "url": "https://cses.fi/problemset/task/1682",
+    "difficulty": 3,
+    "topics": [
+      "scc"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1683",
+    "title": "Planets and Kingdoms",
+    "url": "https://cses.fi/problemset/task/1683",
+    "difficulty": 3,
+    "topics": [
+      "scc"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1684",
+    "title": "Giant Pizza",
+    "url": "https://cses.fi/problemset/task/1684",
+    "difficulty": 4,
+    "topics": [
+      "scc"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1686",
+    "title": "Coin Collector",
+    "url": "https://cses.fi/problemset/task/1686",
+    "difficulty": 4,
+    "topics": [
+      "scc",
+      "dag-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1691",
+    "title": "Mail Delivery",
+    "url": "https://cses.fi/problemset/task/1691",
+    "difficulty": 4,
+    "topics": [
+      "euler-path"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1693",
+    "title": "Teleporters Path",
+    "url": "https://cses.fi/problemset/task/1693",
+    "difficulty": 4,
+    "topics": [
+      "euler-path"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1690",
+    "title": "Hamiltonian Flights",
+    "url": "https://cses.fi/problemset/task/1690",
+    "difficulty": 4,
+    "topics": [
+      "bitmask-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1694",
+    "title": "Download Speed",
+    "url": "https://cses.fi/problemset/task/1694",
+    "difficulty": 4,
+    "topics": [
+      "flow"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1695",
+    "title": "Police Chase",
+    "url": "https://cses.fi/problemset/task/1695",
+    "difficulty": 4,
+    "topics": [
+      "flow"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1696",
+    "title": "School Dance",
+    "url": "https://cses.fi/problemset/task/1696",
+    "difficulty": 4,
+    "topics": [
+      "matching"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1697",
+    "title": "Graph Paths I",
+    "url": "https://cses.fi/problemset/task/1697",
+    "difficulty": 4,
+    "topics": [
+      "matrix-exponentiation"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1131",
+    "title": "Tree Diameter",
+    "url": "https://cses.fi/problemset/task/1131",
+    "difficulty": 2,
+    "topics": [
+      "trees"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1132",
+    "title": "Tree Distances I",
+    "url": "https://cses.fi/problemset/task/1132",
+    "difficulty": 3,
+    "topics": [
+      "trees",
+      "rerooting"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1133",
+    "title": "Tree Distances II",
+    "url": "https://cses.fi/problemset/task/1133",
+    "difficulty": 3,
+    "topics": [
+      "rerooting"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1130",
+    "title": "Tree Matching",
+    "url": "https://cses.fi/problemset/task/1130",
+    "difficulty": 3,
+    "topics": [
+      "tree-dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1139",
+    "title": "Distinct Colors",
+    "url": "https://cses.fi/problemset/task/1139",
+    "difficulty": 4,
+    "topics": [
+      "trees"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1137",
+    "title": "Subtree Queries",
+    "url": "https://cses.fi/problemset/task/1137",
+    "difficulty": 3,
+    "topics": [
+      "fenwick",
+      "trees"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1138",
+    "title": "Path Queries",
+    "url": "https://cses.fi/problemset/task/1138",
+    "difficulty": 3,
+    "topics": [
+      "fenwick",
+      "trees"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1687",
+    "title": "Company Queries I",
+    "url": "https://cses.fi/problemset/task/1687",
+    "difficulty": 3,
+    "topics": [
+      "binary-lifting"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1688",
+    "title": "Company Queries II",
+    "url": "https://cses.fi/problemset/task/1688",
+    "difficulty": 3,
+    "topics": [
+      "lca"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1646",
+    "title": "Static Range Sum Queries",
+    "url": "https://cses.fi/problemset/task/1646",
+    "difficulty": 1,
+    "topics": [
+      "prefix-sums"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1647",
+    "title": "Static Range Minimum Queries",
+    "url": "https://cses.fi/problemset/task/1647",
+    "difficulty": 2,
+    "topics": [
+      "sparse-table"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1648",
+    "title": "Dynamic Range Sum Queries",
+    "url": "https://cses.fi/problemset/task/1648",
+    "difficulty": 2,
+    "topics": [
+      "fenwick"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1649",
+    "title": "Dynamic Range Minimum Queries",
+    "url": "https://cses.fi/problemset/task/1649",
+    "difficulty": 3,
+    "topics": [
+      "segment-tree"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1650",
+    "title": "Range Xor Queries",
+    "url": "https://cses.fi/problemset/task/1650",
+    "difficulty": 2,
+    "topics": [
+      "prefix-sums",
+      "bit-manipulation"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1651",
+    "title": "Range Update Queries",
+    "url": "https://cses.fi/problemset/task/1651",
+    "difficulty": 3,
+    "topics": [
+      "difference-arrays",
+      "fenwick"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1652",
+    "title": "Forest Queries",
+    "url": "https://cses.fi/problemset/task/1652",
+    "difficulty": 2,
+    "topics": [
+      "prefix-sums"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1143",
+    "title": "Hotel Queries",
+    "url": "https://cses.fi/problemset/task/1143",
+    "difficulty": 3,
+    "topics": [
+      "segment-tree"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1735",
+    "title": "Range Updates and Sums",
+    "url": "https://cses.fi/problemset/task/1735",
+    "difficulty": 4,
+    "topics": [
+      "segment-tree"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1734",
+    "title": "Distinct Values Queries",
+    "url": "https://cses.fi/problemset/task/1734",
+    "difficulty": 4,
+    "topics": [
+      "fenwick"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1731",
+    "title": "Word Combinations",
+    "url": "https://cses.fi/problemset/task/1731",
+    "difficulty": 3,
+    "topics": [
+      "trie",
+      "dp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1753",
+    "title": "String Matching",
+    "url": "https://cses.fi/problemset/task/1753",
+    "difficulty": 3,
+    "topics": [
+      "kmp"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1732",
+    "title": "Finding Borders",
+    "url": "https://cses.fi/problemset/task/1732",
+    "difficulty": 3,
+    "topics": [
+      "kmp",
+      "z-algorithm"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1733",
+    "title": "Finding Periods",
+    "url": "https://cses.fi/problemset/task/1733",
+    "difficulty": 3,
+    "topics": [
+      "z-algorithm"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1110",
+    "title": "Minimal Rotation",
+    "url": "https://cses.fi/problemset/task/1110",
+    "difficulty": 4,
+    "topics": [
+      "strings"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1111",
+    "title": "Longest Palindrome",
+    "url": "https://cses.fi/problemset/task/1111",
+    "difficulty": 4,
+    "topics": [
+      "palindromes",
+      "hashing"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "2102",
+    "title": "Finding Patterns",
+    "url": "https://cses.fi/problemset/task/2102",
+    "difficulty": 4,
+    "topics": [
+      "trie"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1628",
+    "title": "Meet in the Middle",
+    "url": "https://cses.fi/problemset/task/1628",
+    "difficulty": 3,
+    "topics": [
+      "divide-and-conquer"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "2166",
+    "title": "Prefix Sum Queries",
+    "url": "https://cses.fi/problemset/task/2166",
+    "difficulty": 3,
+    "topics": [
+      "segment-tree"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "2076",
+    "title": "Necessary Roads",
+    "url": "https://cses.fi/problemset/task/2076",
+    "difficulty": 4,
+    "topics": [
+      "bridges"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "2077",
+    "title": "Necessary Cities",
+    "url": "https://cses.fi/problemset/task/2077",
+    "difficulty": 4,
+    "topics": [
+      "articulation"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1081",
+    "title": "Common Divisors",
+    "url": "https://cses.fi/problemset/task/1081",
+    "difficulty": 2,
+    "topics": [
+      "number-theory"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1713",
+    "title": "Counting Divisors",
+    "url": "https://cses.fi/problemset/task/1713",
+    "difficulty": 2,
+    "topics": [
+      "number-theory"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1095",
+    "title": "Exponentiation",
+    "url": "https://cses.fi/problemset/task/1095",
+    "difficulty": 2,
+    "topics": [
+      "number-theory"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1712",
+    "title": "Exponentiation II",
+    "url": "https://cses.fi/problemset/task/1712",
+    "difficulty": 3,
+    "topics": [
+      "number-theory"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1716",
+    "title": "Distributing Apples",
+    "url": "https://cses.fi/problemset/task/1716",
+    "difficulty": 3,
+    "topics": [
+      "combinatorics"
+    ]
+  },
+  {
+    "platform": "cses",
+    "problem_id": "1717",
+    "title": "Christmas Party",
+    "url": "https://cses.fi/problemset/task/1717",
+    "difficulty": 3,
+    "topics": [
+      "combinatorics",
+      "dp"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "4A",
+    "title": "Watermelon",
+    "url": "https://codeforces.com/problemset/problem/4/A",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "71A",
+    "title": "Way Too Long Words",
+    "url": "https://codeforces.com/problemset/problem/71/A",
+    "difficulty": 1,
+    "topics": [
+      "strings"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "231A",
+    "title": "Team",
+    "url": "https://codeforces.com/problemset/problem/231/A",
+    "difficulty": 1,
+    "topics": [
+      "arrays"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "158A",
+    "title": "Next Round",
+    "url": "https://codeforces.com/problemset/problem/158/A",
+    "difficulty": 1,
+    "topics": [
+      "arrays"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "50A",
+    "title": "Domino Piling",
+    "url": "https://codeforces.com/problemset/problem/50/A",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "282A",
+    "title": "Bit++",
+    "url": "https://codeforces.com/problemset/problem/282/A",
+    "difficulty": 1,
+    "topics": [
+      "strings"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "263A",
+    "title": "Beautiful Matrix",
+    "url": "https://codeforces.com/problemset/problem/263/A",
+    "difficulty": 1,
+    "topics": [
+      "arrays"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "339A",
+    "title": "Helpful Maths",
+    "url": "https://codeforces.com/problemset/problem/339/A",
+    "difficulty": 1,
+    "topics": [
+      "sorting",
+      "strings"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "281A",
+    "title": "Word Capitalization",
+    "url": "https://codeforces.com/problemset/problem/281/A",
+    "difficulty": 1,
+    "topics": [
+      "strings"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "236A",
+    "title": "Boy or Girl",
+    "url": "https://codeforces.com/problemset/problem/236/A",
+    "difficulty": 1,
+    "topics": [
+      "stl",
+      "frequency-counting"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "112A",
+    "title": "Petya and Strings",
+    "url": "https://codeforces.com/problemset/problem/112/A",
+    "difficulty": 1,
+    "topics": [
+      "strings"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "118A",
+    "title": "String Task",
+    "url": "https://codeforces.com/problemset/problem/118/A",
+    "difficulty": 1,
+    "topics": [
+      "strings"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "266A",
+    "title": "Stones on the Table",
+    "url": "https://codeforces.com/problemset/problem/266/A",
+    "difficulty": 1,
+    "topics": [
+      "strings",
+      "two-pointers"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "266B",
+    "title": "Queue at the School",
+    "url": "https://codeforces.com/problemset/problem/266/B",
+    "difficulty": 1,
+    "topics": [
+      "arrays"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "58A",
+    "title": "Chat room",
+    "url": "https://codeforces.com/problemset/problem/58/A",
+    "difficulty": 1,
+    "topics": [
+      "two-pointers",
+      "strings"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "977A",
+    "title": "Wrong Subtraction",
+    "url": "https://codeforces.com/problemset/problem/977/A",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "791A",
+    "title": "Bear and Big Brother",
+    "url": "https://codeforces.com/problemset/problem/791/A",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "546A",
+    "title": "Soldier and Bananas",
+    "url": "https://codeforces.com/problemset/problem/546/A",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "617A",
+    "title": "Elephant",
+    "url": "https://codeforces.com/problemset/problem/617/A",
+    "difficulty": 1,
+    "topics": [
+      "greedy"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "110A",
+    "title": "Nearly Lucky Number",
+    "url": "https://codeforces.com/problemset/problem/110/A",
+    "difficulty": 1,
+    "topics": [
+      "strings"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "344A",
+    "title": "Magnets",
+    "url": "https://codeforces.com/problemset/problem/344/A",
+    "difficulty": 1,
+    "topics": [
+      "arrays"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "467A",
+    "title": "George and Accommodation",
+    "url": "https://codeforces.com/problemset/problem/467/A",
+    "difficulty": 1,
+    "topics": [
+      "arrays"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "443A",
+    "title": "Anton and Letters",
+    "url": "https://codeforces.com/problemset/problem/443/A",
+    "difficulty": 1,
+    "topics": [
+      "stl"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "520A",
+    "title": "Pangram",
+    "url": "https://codeforces.com/problemset/problem/520/A",
+    "difficulty": 1,
+    "topics": [
+      "frequency-counting",
+      "strings"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "230A",
+    "title": "Dragons",
+    "url": "https://codeforces.com/problemset/problem/230/A",
+    "difficulty": 2,
+    "topics": [
+      "sorting",
+      "greedy"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "160A",
+    "title": "Twins",
+    "url": "https://codeforces.com/problemset/problem/160/A",
+    "difficulty": 2,
+    "topics": [
+      "greedy",
+      "sorting"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "189A",
+    "title": "Cut Ribbon",
+    "url": "https://codeforces.com/problemset/problem/189/A",
+    "difficulty": 2,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "455A",
+    "title": "Boredom",
+    "url": "https://codeforces.com/problemset/problem/455/A",
+    "difficulty": 2,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "474B",
+    "title": "Worms",
+    "url": "https://codeforces.com/problemset/problem/474/B",
+    "difficulty": 2,
+    "topics": [
+      "binary-search",
+      "prefix-sums"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "706B",
+    "title": "Interesting drink",
+    "url": "https://codeforces.com/problemset/problem/706/B",
+    "difficulty": 2,
+    "topics": [
+      "binary-search"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "363B",
+    "title": "Fence",
+    "url": "https://codeforces.com/problemset/problem/363/B",
+    "difficulty": 2,
+    "topics": [
+      "sliding-window"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "279B",
+    "title": "Books",
+    "url": "https://codeforces.com/problemset/problem/279/B",
+    "difficulty": 2,
+    "topics": [
+      "sliding-window",
+      "two-pointers"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "580A",
+    "title": "Kefa and First Steps",
+    "url": "https://codeforces.com/problemset/problem/580/A",
+    "difficulty": 1,
+    "topics": [
+      "arrays"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "580C",
+    "title": "Kefa and Park",
+    "url": "https://codeforces.com/problemset/problem/580/C",
+    "difficulty": 2,
+    "topics": [
+      "trees",
+      "graph-traversal"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "25D",
+    "title": "Roads not only in Berland",
+    "url": "https://codeforces.com/problemset/problem/25/D",
+    "difficulty": 3,
+    "topics": [
+      "dsu"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "510C",
+    "title": "Fox And Names",
+    "url": "https://codeforces.com/problemset/problem/510/C",
+    "difficulty": 3,
+    "topics": [
+      "topological-sort"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "20C",
+    "title": "Dijkstra?",
+    "url": "https://codeforces.com/problemset/problem/20/C",
+    "difficulty": 3,
+    "topics": [
+      "shortest-path"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "427C",
+    "title": "Checkposts",
+    "url": "https://codeforces.com/problemset/problem/427/C",
+    "difficulty": 4,
+    "topics": [
+      "scc"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "61E",
+    "title": "Enemy is weak",
+    "url": "https://codeforces.com/problemset/problem/61/E",
+    "difficulty": 4,
+    "topics": [
+      "fenwick"
+    ]
+  },
+  {
+    "platform": "codeforces",
+    "problem_id": "86D",
+    "title": "Powerful array",
+    "url": "https://codeforces.com/problemset/problem/86/D",
+    "difficulty": 5,
+    "topics": [
+      "range-decomposition"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_a",
+    "title": "Frog 1",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_a",
+    "difficulty": 1,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_b",
+    "title": "Frog 2",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_b",
+    "difficulty": 2,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_c",
+    "title": "Vacation",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_c",
+    "difficulty": 2,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_d",
+    "title": "Knapsack 1",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_d",
+    "difficulty": 2,
+    "topics": [
+      "knapsack"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_e",
+    "title": "Knapsack 2",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_e",
+    "difficulty": 3,
+    "topics": [
+      "knapsack"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_f",
+    "title": "LCS",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_f",
+    "difficulty": 3,
+    "topics": [
+      "subsequence-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_g",
+    "title": "Longest Path",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_g",
+    "difficulty": 3,
+    "topics": [
+      "dag-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_h",
+    "title": "Grid 1",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_h",
+    "difficulty": 2,
+    "topics": [
+      "grid-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_i",
+    "title": "Coins",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_i",
+    "difficulty": 3,
+    "topics": [
+      "probability-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_j",
+    "title": "Sushi",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_j",
+    "difficulty": 4,
+    "topics": [
+      "probability-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_k",
+    "title": "Stones",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_k",
+    "difficulty": 3,
+    "topics": [
+      "game-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_l",
+    "title": "Deque",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_l",
+    "difficulty": 3,
+    "topics": [
+      "interval-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_m",
+    "title": "Candies",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_m",
+    "difficulty": 3,
+    "topics": [
+      "prefix-sums",
+      "dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_n",
+    "title": "Slimes",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_n",
+    "difficulty": 3,
+    "topics": [
+      "interval-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_o",
+    "title": "Matching",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_o",
+    "difficulty": 4,
+    "topics": [
+      "bitmask-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_p",
+    "title": "Independent Set",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_p",
+    "difficulty": 3,
+    "topics": [
+      "tree-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_q",
+    "title": "Flowers",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_q",
+    "difficulty": 4,
+    "topics": [
+      "lis",
+      "fenwick"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_r",
+    "title": "Walk",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_r",
+    "difficulty": 4,
+    "topics": [
+      "matrix-exponentiation"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_s",
+    "title": "Digit Sum",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_s",
+    "difficulty": 4,
+    "topics": [
+      "digit-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_t",
+    "title": "Permutation",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_t",
+    "difficulty": 4,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_u",
+    "title": "Grouping",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_u",
+    "difficulty": 4,
+    "topics": [
+      "bitmask-dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_v",
+    "title": "Subtree",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_v",
+    "difficulty": 4,
+    "topics": [
+      "rerooting"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_w",
+    "title": "Intervals",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_w",
+    "difficulty": 5,
+    "topics": [
+      "segment-tree",
+      "dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_x",
+    "title": "Tower",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_x",
+    "difficulty": 4,
+    "topics": [
+      "dp",
+      "sorting"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_y",
+    "title": "Grid 2",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_y",
+    "difficulty": 4,
+    "topics": [
+      "grid-dp",
+      "combinatorics"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "dp_z",
+    "title": "Frog 3",
+    "url": "https://atcoder.jp/contests/dp/tasks/dp_z",
+    "difficulty": 5,
+    "topics": [
+      "dp-optimization"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "abc086_a",
+    "title": "Product",
+    "url": "https://atcoder.jp/contests/abc086/tasks/abc086_a",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "abc081_a",
+    "title": "Placing Marbles",
+    "url": "https://atcoder.jp/contests/abc081/tasks/abc081_a",
+    "difficulty": 1,
+    "topics": [
+      "strings"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "abc081_b",
+    "title": "Shift only",
+    "url": "https://atcoder.jp/contests/abc081/tasks/abc081_b",
+    "difficulty": 1,
+    "topics": [
+      "bit-manipulation"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "abc087_b",
+    "title": "Coins",
+    "url": "https://atcoder.jp/contests/abc087/tasks/abc087_b",
+    "difficulty": 1,
+    "topics": [
+      "backtracking"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "abc083_b",
+    "title": "Some Sums",
+    "url": "https://atcoder.jp/contests/abc083/tasks/abc083_b",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "abc088_b",
+    "title": "Card Game for Two",
+    "url": "https://atcoder.jp/contests/abc088/tasks/abc088_b",
+    "difficulty": 1,
+    "topics": [
+      "sorting",
+      "greedy"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "abc085_b",
+    "title": "Kagami Mochi",
+    "url": "https://atcoder.jp/contests/abc085/tasks/abc085_b",
+    "difficulty": 1,
+    "topics": [
+      "stl"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "abc085_c",
+    "title": "Otoshidama",
+    "url": "https://atcoder.jp/contests/abc085/tasks/abc085_c",
+    "difficulty": 2,
+    "topics": [
+      "backtracking"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "abc049_c",
+    "title": "Daydream",
+    "url": "https://atcoder.jp/contests/abc049/tasks/abc049_c",
+    "difficulty": 2,
+    "topics": [
+      "strings",
+      "dp"
+    ]
+  },
+  {
+    "platform": "atcoder",
+    "problem_id": "abc086_c",
+    "title": "Traveling",
+    "url": "https://atcoder.jp/contests/abc086/tasks/abc086_c",
+    "difficulty": 2,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "FLOW001",
+    "title": "Add Two Numbers",
+    "url": "https://www.codechef.com/problems/FLOW001",
+    "difficulty": 1,
+    "topics": [
+      "stl",
+      "math"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "START01",
+    "title": "Number Mirror",
+    "url": "https://www.codechef.com/problems/START01",
+    "difficulty": 1,
+    "topics": [
+      "stl"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "INTEST",
+    "title": "Enormous Input Test",
+    "url": "https://www.codechef.com/problems/INTEST",
+    "difficulty": 1,
+    "topics": [
+      "stl"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "FLOW006",
+    "title": "Sum of Digits",
+    "url": "https://www.codechef.com/problems/FLOW006",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "FLOW007",
+    "title": "Reverse The Number",
+    "url": "https://www.codechef.com/problems/FLOW007",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "FLOW009",
+    "title": "Total Expenses",
+    "url": "https://www.codechef.com/problems/FLOW009",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "FLOW010",
+    "title": "Id and Ship",
+    "url": "https://www.codechef.com/problems/FLOW010",
+    "difficulty": 1,
+    "topics": [
+      "strings"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "FLOW011",
+    "title": "Gross Salary",
+    "url": "https://www.codechef.com/problems/FLOW011",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "FLOW013",
+    "title": "Valid Triangles",
+    "url": "https://www.codechef.com/problems/FLOW013",
+    "difficulty": 1,
+    "topics": [
+      "math"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "FLOW016",
+    "title": "GCD and LCM",
+    "url": "https://www.codechef.com/problems/FLOW016",
+    "difficulty": 1,
+    "topics": [
+      "number-theory"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "FCTRL",
+    "title": "Factorial",
+    "url": "https://www.codechef.com/problems/FCTRL",
+    "difficulty": 2,
+    "topics": [
+      "number-theory"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "FCTRL2",
+    "title": "Small Factorials",
+    "url": "https://www.codechef.com/problems/FCTRL2",
+    "difficulty": 2,
+    "topics": [
+      "arrays",
+      "math"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "TSORT",
+    "title": "Turbo Sort",
+    "url": "https://www.codechef.com/problems/TSORT",
+    "difficulty": 1,
+    "topics": [
+      "sorting"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "LAPIN",
+    "title": "Lapindromes",
+    "url": "https://www.codechef.com/problems/LAPIN",
+    "difficulty": 2,
+    "topics": [
+      "frequency-counting",
+      "strings"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "STPAR",
+    "title": "Street Parade",
+    "url": "https://www.codechef.com/problems/STPAR",
+    "difficulty": 2,
+    "topics": [
+      "monotonic-stack"
+    ]
+  },
+  {
+    "platform": "codechef",
+    "problem_id": "CLEANUP",
+    "title": "Cleaning Up",
+    "url": "https://www.codechef.com/problems/CLEANUP",
+    "difficulty": 1,
+    "topics": [
+      "arrays"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "two-sum",
+    "title": "Two Sum",
+    "url": "https://leetcode.com/problems/two-sum/",
+    "difficulty": 1,
+    "topics": [
+      "hashing",
+      "arrays"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "valid-parentheses",
+    "title": "Valid Parentheses",
+    "url": "https://leetcode.com/problems/valid-parentheses/",
+    "difficulty": 1,
+    "topics": [
+      "stl"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "merge-two-sorted-lists",
+    "title": "Merge Two Sorted Lists",
+    "url": "https://leetcode.com/problems/merge-two-sorted-lists/",
+    "difficulty": 1,
+    "topics": [
+      "linked-lists"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "best-time-to-buy-and-sell-stock",
+    "title": "Best Time to Buy and Sell Stock",
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+    "difficulty": 1,
+    "topics": [
+      "arrays",
+      "dp"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "valid-palindrome",
+    "title": "Valid Palindrome",
+    "url": "https://leetcode.com/problems/valid-palindrome/",
+    "difficulty": 1,
+    "topics": [
+      "two-pointers",
+      "palindromes"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "invert-binary-tree",
+    "title": "Invert Binary Tree",
+    "url": "https://leetcode.com/problems/invert-binary-tree/",
+    "difficulty": 1,
+    "topics": [
+      "trees"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "binary-search",
+    "title": "Binary Search",
+    "url": "https://leetcode.com/problems/binary-search/",
+    "difficulty": 1,
+    "topics": [
+      "binary-search"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "flood-fill",
+    "title": "Flood Fill",
+    "url": "https://leetcode.com/problems/flood-fill/",
+    "difficulty": 1,
+    "topics": [
+      "graph-traversal"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "maximum-subarray",
+    "title": "Maximum Subarray",
+    "url": "https://leetcode.com/problems/maximum-subarray/",
+    "difficulty": 2,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "climbing-stairs",
+    "title": "Climbing Stairs",
+    "url": "https://leetcode.com/problems/climbing-stairs/",
+    "difficulty": 1,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "longest-substring-without-repeating-characters",
+    "title": "Longest Substring Without Repeating Characters",
+    "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+    "difficulty": 2,
+    "topics": [
+      "sliding-window"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "3sum",
+    "title": "3Sum",
+    "url": "https://leetcode.com/problems/3sum/",
+    "difficulty": 2,
+    "topics": [
+      "two-pointers"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "container-with-most-water",
+    "title": "Container With Most Water",
+    "url": "https://leetcode.com/problems/container-with-most-water/",
+    "difficulty": 2,
+    "topics": [
+      "two-pointers"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "minimum-window-substring",
+    "title": "Minimum Window Substring",
+    "url": "https://leetcode.com/problems/minimum-window-substring/",
+    "difficulty": 4,
+    "topics": [
+      "sliding-window"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "group-anagrams",
+    "title": "Group Anagrams",
+    "url": "https://leetcode.com/problems/group-anagrams/",
+    "difficulty": 2,
+    "topics": [
+      "hashing",
+      "frequency-counting"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "product-of-array-except-self",
+    "title": "Product of Array Except Self",
+    "url": "https://leetcode.com/problems/product-of-array-except-self/",
+    "difficulty": 2,
+    "topics": [
+      "prefix-sums"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "merge-intervals",
+    "title": "Merge Intervals",
+    "url": "https://leetcode.com/problems/merge-intervals/",
+    "difficulty": 2,
+    "topics": [
+      "intervals"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "search-in-rotated-sorted-array",
+    "title": "Search in Rotated Sorted Array",
+    "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+    "difficulty": 2,
+    "topics": [
+      "binary-search"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "koko-eating-bananas",
+    "title": "Koko Eating Bananas",
+    "url": "https://leetcode.com/problems/koko-eating-bananas/",
+    "difficulty": 2,
+    "topics": [
+      "binary-search-answer"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "reverse-linked-list",
+    "title": "Reverse Linked List",
+    "url": "https://leetcode.com/problems/reverse-linked-list/",
+    "difficulty": 1,
+    "topics": [
+      "linked-lists"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "linked-list-cycle",
+    "title": "Linked List Cycle",
+    "url": "https://leetcode.com/problems/linked-list-cycle/",
+    "difficulty": 1,
+    "topics": [
+      "linked-lists",
+      "two-pointers"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "lru-cache",
+    "title": "LRU Cache",
+    "url": "https://leetcode.com/problems/lru-cache/",
+    "difficulty": 3,
+    "topics": [
+      "linked-lists",
+      "hashing"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "daily-temperatures",
+    "title": "Daily Temperatures",
+    "url": "https://leetcode.com/problems/daily-temperatures/",
+    "difficulty": 2,
+    "topics": [
+      "monotonic-stack"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "sliding-window-maximum",
+    "title": "Sliding Window Maximum",
+    "url": "https://leetcode.com/problems/sliding-window-maximum/",
+    "difficulty": 4,
+    "topics": [
+      "monotonic-queue",
+      "sliding-window"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "kth-largest-element-in-an-array",
+    "title": "Kth Largest Element in an Array",
+    "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+    "difficulty": 2,
+    "topics": [
+      "heap"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "find-median-from-data-stream",
+    "title": "Find Median from Data Stream",
+    "url": "https://leetcode.com/problems/find-median-from-data-stream/",
+    "difficulty": 4,
+    "topics": [
+      "heap"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "implement-trie-prefix-tree",
+    "title": "Implement Trie (Prefix Tree)",
+    "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+    "difficulty": 2,
+    "topics": [
+      "trie"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "word-search",
+    "title": "Word Search",
+    "url": "https://leetcode.com/problems/word-search/",
+    "difficulty": 2,
+    "topics": [
+      "backtracking"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "subsets",
+    "title": "Subsets",
+    "url": "https://leetcode.com/problems/subsets/",
+    "difficulty": 2,
+    "topics": [
+      "backtracking",
+      "bit-manipulation"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "permutations",
+    "title": "Permutations",
+    "url": "https://leetcode.com/problems/permutations/",
+    "difficulty": 2,
+    "topics": [
+      "backtracking"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "combination-sum",
+    "title": "Combination Sum",
+    "url": "https://leetcode.com/problems/combination-sum/",
+    "difficulty": 2,
+    "topics": [
+      "backtracking"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "number-of-islands",
+    "title": "Number of Islands",
+    "url": "https://leetcode.com/problems/number-of-islands/",
+    "difficulty": 2,
+    "topics": [
+      "graph-traversal"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "course-schedule",
+    "title": "Course Schedule",
+    "url": "https://leetcode.com/problems/course-schedule/",
+    "difficulty": 2,
+    "topics": [
+      "topological-sort"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "network-delay-time",
+    "title": "Network Delay Time",
+    "url": "https://leetcode.com/problems/network-delay-time/",
+    "difficulty": 3,
+    "topics": [
+      "shortest-path"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "redundant-connection",
+    "title": "Redundant Connection",
+    "url": "https://leetcode.com/problems/redundant-connection/",
+    "difficulty": 2,
+    "topics": [
+      "dsu"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "critical-connections-in-a-network",
+    "title": "Critical Connections in a Network",
+    "url": "https://leetcode.com/problems/critical-connections-in-a-network/",
+    "difficulty": 4,
+    "topics": [
+      "bridges"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "house-robber",
+    "title": "House Robber",
+    "url": "https://leetcode.com/problems/house-robber/",
+    "difficulty": 2,
+    "topics": [
+      "dp"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "coin-change",
+    "title": "Coin Change",
+    "url": "https://leetcode.com/problems/coin-change/",
+    "difficulty": 2,
+    "topics": [
+      "knapsack"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "longest-increasing-subsequence",
+    "title": "Longest Increasing Subsequence",
+    "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+    "difficulty": 2,
+    "topics": [
+      "lis"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "longest-common-subsequence",
+    "title": "Longest Common Subsequence",
+    "url": "https://leetcode.com/problems/longest-common-subsequence/",
+    "difficulty": 2,
+    "topics": [
+      "subsequence-dp"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "unique-paths",
+    "title": "Unique Paths",
+    "url": "https://leetcode.com/problems/unique-paths/",
+    "difficulty": 2,
+    "topics": [
+      "grid-dp"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "edit-distance",
+    "title": "Edit Distance",
+    "url": "https://leetcode.com/problems/edit-distance/",
+    "difficulty": 3,
+    "topics": [
+      "subsequence-dp"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "burst-balloons",
+    "title": "Burst Balloons",
+    "url": "https://leetcode.com/problems/burst-balloons/",
+    "difficulty": 4,
+    "topics": [
+      "interval-dp"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "binary-tree-maximum-path-sum",
+    "title": "Binary Tree Maximum Path Sum",
+    "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+    "difficulty": 4,
+    "topics": [
+      "tree-dp"
+    ]
+  },
+  {
+    "platform": "leetcode",
+    "problem_id": "counting-bits",
+    "title": "Counting Bits",
+    "url": "https://leetcode.com/problems/counting-bits/",
+    "difficulty": 1,
+    "topics": [
+      "bit-manipulation",
+      "dp"
+    ]
+  }
+]

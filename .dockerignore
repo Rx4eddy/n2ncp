@@ -1,0 +1,15 @@
+.git
+.env
+.env.*
+.venv
+node_modules
+static/vendor
+static/app.css
+staticfiles
+*.sqlite3
+*.log
+__pycache__
+.pytest_cache
+.ruff_cache
+.coverage
+htmlcov

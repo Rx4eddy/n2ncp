@@ -1,0 +1,1 @@
+{"name":"n2ncp","version":"1.0.0","private":true,"scripts":{"build":"tailwindcss -i frontend/styles.css -o static/app.css --minify && node frontend/build.mjs","check":"node --check frontend/app.js && node --check frontend/build.mjs"},"dependencies":{"chart.js":"4.4.8","htmx.org":"2.0.4"},"devDependencies":{"tailwindcss":"3.4.17"}}

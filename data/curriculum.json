@@ -1,0 +1,912 @@
+[
+  {
+    "slug": "cpp-stl",
+    "title": "C++ foundations & the standard library",
+    "order": 1,
+    "prerequisites": [],
+    "topics": [
+      "stl",
+      "arrays"
+    ],
+    "description": "Build confidence with C++20, complexity, iterators, containers, and standard algorithms.",
+    "recognition": "Choose vector for contiguous storage, map for ordered lookup, unordered_map for average constant-time lookup, and priority_queue for repeated extremes. Sort before searching a range.",
+    "pitfalls": "Iterator invalidation; accidental map insertion with operator[]; overflow in int; comparators must define a strict weak ordering.",
+    "cpp_example": "#include <algorithm>\n#include <iostream>\n#include <vector>\nint main() {\n  std::vector<int> a{4, 1, 4, 2};\n  std::sort(a.begin(), a.end());\n  a.erase(std::unique(a.begin(), a.end()), a.end());\n  for (int x : a) std::cout << x << \" \";\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Implement a small dynamic array",
+        "prompt": "Implement push_back, pop_back, size, and indexed access for integers using a heap-allocated buffer. Double capacity when full. Then solve the same task using std::vector and compare amortized complexity. Test empty, growth, and repeated pop cases.",
+        "hints": [
+          "Track size separately from capacity.",
+          "Allocate a larger buffer before copying and releasing the old one."
+        ],
+        "solution": "Geometric growth makes a sequence of n appends O(n). Indexed access is O(1). Use RAII (std::unique_ptr<int[]>) to release memory; reject out-of-range access and popping an empty array."
+      }
+    ]
+  },
+  {
+    "slug": "sorting-frequency",
+    "title": "Sorting & frequency counting",
+    "order": 2,
+    "prerequisites": [
+      "cpp-stl"
+    ],
+    "topics": [
+      "sorting",
+      "frequency-counting"
+    ],
+    "description": "Turn unordered input into structure using comparators and frequency tables.",
+    "recognition": "Ordering exposes adjacent equal values, rank, and greedy choices. Small alphabets often need only an array of counts.",
+    "pitfalls": "Subtracting values in a comparator can overflow. Never use <= as the comparator.",
+    "cpp_example": "std::sort(a.begin(), a.end(), [](auto x, auto y) {\n  return x.second != y.second ? x.second < y.second : x.first < y.first;\n});",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Stable score ordering",
+        "prompt": "Given (name, score, arrival) records, order scores descending while preserving arrival order on ties. Implement with stable_sort, then with an explicit tie-breaker.",
+        "hints": [
+          "A comparator answers whether x must come before y.",
+          "For equal scores return false in both directions with stable_sort."
+        ],
+        "solution": "Both variants take O(n log n). Verify all-equal scores, negative scores, and already sorted input. Explain why a non-strict comparator violates the sorting contract."
+      }
+    ]
+  },
+  {
+    "slug": "two-pointers",
+    "title": "Two pointers",
+    "order": 3,
+    "prerequisites": [
+      "sorting-frequency"
+    ],
+    "topics": [
+      "two-pointers"
+    ],
+    "description": "Replace nested scans with coordinated movement through a sequence.",
+    "recognition": "Look for sorted pairs, in-place compaction, merging, or palindromes. Prove why moving one pointer discards only impossible candidates.",
+    "pitfalls": "Two pointers are not valid for every pair search; sortedness or another monotonic property is essential.",
+    "cpp_example": "int l=0, r=(int)a.size()-1;\nwhile (l<r) {\n  long long sum=1LL*a[l]+a[r];\n  if (sum==target) break;\n  if (sum<target) ++l; else --r;\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Merge without extra sorting",
+        "prompt": "Merge two sorted arrays and remove duplicates in O(n+m). Handle an empty input and duplicates within each input.",
+        "hints": [
+          "Always consume the smaller front item.",
+          "Emit only when the output is empty or the last emitted value differs."
+        ],
+        "solution": "Each pointer advances at most its input length. O(n+m) time and O(n+m) output space. Contrast with concatenating and sorting."
+      }
+    ]
+  },
+  {
+    "slug": "sliding-window",
+    "title": "Fixed & variable sliding windows",
+    "order": 4,
+    "prerequisites": [
+      "two-pointers"
+    ],
+    "topics": [
+      "sliding-window"
+    ],
+    "description": "Maintain a summary while a contiguous interval moves.",
+    "recognition": "Use fixed windows for exact lengths. Variable windows need a condition you can restore by shrinking from the left.",
+    "pitfalls": "A sum-based shrink rule fails with negative numbers. Distinguish exactly k from at most k.",
+    "cpp_example": "for (int r=0; r<n; ++r) {\n  ++freq[a[r]];\n  while (!valid()) --freq[a[l++]];\n  answer = std::max(answer, r-l+1);\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Longest interval with at most k distinct values",
+        "prompt": "Return the length and endpoints of the longest contiguous interval containing at most k distinct integers. Include k=0.",
+        "hints": [
+          "Maintain frequencies and the number of nonzero frequencies.",
+          "Shrink until distinct <= k, then update the best interval."
+        ],
+        "solution": "Each element enters and leaves once: O(n) expected time with a hash map. Removing a key at zero keeps distinct counts accurate."
+      }
+    ]
+  },
+  {
+    "slug": "prefix-difference",
+    "title": "Prefix sums & difference arrays",
+    "order": 5,
+    "prerequisites": [
+      "cpp-stl"
+    ],
+    "topics": [
+      "prefix-sums",
+      "difference-arrays"
+    ],
+    "description": "Answer range queries and batch interval updates using cumulative structure.",
+    "recognition": "Static range sums are differences of prefixes. Many additive interval updates become two boundary changes.",
+    "pitfalls": "Choose one interval convention and document it. Use 64-bit sums.",
+    "cpp_example": "std::vector<long long> pref(n+1);\nfor (int i=0; i<n; ++i) pref[i+1]=pref[i]+a[i];\nauto range_sum=[&](int l,int r){return pref[r]-pref[l];};",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Batch range additions",
+        "prompt": "Start with n zeros. Apply q updates adding x to inclusive [l,r]. Return the final array without looping over each interval.",
+        "hints": [
+          "Add x at l and subtract x at r+1.",
+          "Recover values with one prefix scan."
+        ],
+        "solution": "Use n+1 or n+2 storage for the right boundary. O(n+q) time. Test a single point, the full range, and overlapping updates."
+      }
+    ]
+  },
+  {
+    "slug": "binary-search",
+    "title": "Binary search & searching the answer",
+    "order": 6,
+    "prerequisites": [
+      "sorting-frequency"
+    ],
+    "topics": [
+      "binary-search",
+      "binary-search-answer"
+    ],
+    "description": "Find boundaries and optimize a monotonic feasibility predicate.",
+    "recognition": "Search a sorted sequence or the smallest feasible answer. Write the predicate before writing the search.",
+    "pitfalls": "Off-by-one errors; midpoint overflow; feasibility must be monotonic.",
+    "cpp_example": "long long lo=0, hi=upper;\nwhile(lo<hi){\n  long long mid=lo+(hi-lo)/2;\n  if(feasible(mid)) hi=mid; else lo=mid+1;\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Implement lower_bound",
+        "prompt": "Return the first index with a[i] >= x in a sorted vector, or n if none. Do not call lower_bound in your implementation; compare against it in tests.",
+        "hints": [
+          "Use the half-open interval [lo,hi).",
+          "Maintain that every index before lo is too small."
+        ],
+        "solution": "An empty vector needs no special branch. O(log n) comparisons. Test duplicates and targets outside the range."
+      }
+    ]
+  },
+  {
+    "slug": "string-basics",
+    "title": "String manipulation & palindromes",
+    "order": 7,
+    "prerequisites": [
+      "cpp-stl"
+    ],
+    "topics": [
+      "strings",
+      "palindromes"
+    ],
+    "description": "Build safe string transformations, matching scans, and palindrome checks.",
+    "recognition": "Decide whether the problem needs character counts, positional order, or both.",
+    "pitfalls": "Byte-based std::string is not a Unicode character sequence. Cast to unsigned char before calling cctype functions.",
+    "cpp_example": "bool palindrome(const std::string& s){\n  int l=0,r=(int)s.size()-1;\n  while(l<r) if(s[l++]!=s[r--]) return false;\n  return true;\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Run-length encode and decode",
+        "prompt": "For lowercase ASCII input, encode each run as (character,count) pairs and reconstruct the original. Define behavior for the empty string.",
+        "hints": [
+          "Flush the previous run when the character changes.",
+          "Using structured pairs avoids ambiguity between counts and characters."
+        ],
+        "solution": "Both operations are linear in input/output size. State a maximum decoded size before allocating; malformed or enormous counts should be rejected."
+      }
+    ]
+  },
+  {
+    "slug": "hashing",
+    "title": "Hash maps & rolling hashes",
+    "order": 8,
+    "prerequisites": [
+      "string-basics"
+    ],
+    "topics": [
+      "hashing"
+    ],
+    "description": "Use fast lookup for complements, signatures, and substring fingerprints.",
+    "recognition": "Repeated membership queries suggest hash maps. Rolling hashes support substring comparisons with collision risk.",
+    "pitfalls": "Hash equality is not proof of string equality. Prefer deterministic algorithms where correctness requires it.",
+    "cpp_example": "std::unordered_map<long long,int> seen;\nfor(int i=0;i<n;++i){\n  if(seen.contains(target-a[i])) {/* found a pair */}\n  seen[a[i]]=i;\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Anagram groups",
+        "prompt": "Group lowercase words by an array of 26 character counts. Compare that signature with sorted-string signatures.",
+        "hints": [
+          "Anagrams have identical multiplicities.",
+          "Serialize counts with separators or use an array comparator."
+        ],
+        "solution": "Counting signatures take O(total characters) plus map overhead. Sorting each word costs O(L log L). Keep a deterministic signature instead of a lossy hash-only key."
+      }
+    ]
+  },
+  {
+    "slug": "recursion-backtracking",
+    "title": "Recursion, backtracking & divide and conquer",
+    "order": 9,
+    "prerequisites": [
+      "cpp-stl"
+    ],
+    "topics": [
+      "recursion",
+      "backtracking",
+      "divide-and-conquer"
+    ],
+    "description": "Explore choices carefully and split independent subproblems.",
+    "recognition": "Backtracking needs choose, recurse, undo. Divide and conquer needs a base case and a correct merge.",
+    "pitfalls": "Forgetting to undo state leaks decisions into sibling branches. Bound exponential work before running.",
+    "cpp_example": "void search(int i){\n  if(i==n){process();return;}\n  search(i+1);\n  chosen.push_back(a[i]);\n  search(i+1);\n  chosen.pop_back();\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Generate balanced parentheses",
+        "prompt": "Generate all balanced sequences with n pairs. Prune invalid prefixes rather than generating all 2^(2n) strings.",
+        "hints": [
+          "Track opened and closed counts.",
+          "You may close only when closed < opened."
+        ],
+        "solution": "Every prefix has at least as many opens as closes. Output-sensitive complexity is proportional to the Catalan number times n. n=0 has one empty sequence."
+      }
+    ]
+  },
+  {
+    "slug": "greedy-intervals",
+    "title": "Greedy choices & intervals",
+    "order": 10,
+    "prerequisites": [
+      "sorting-frequency"
+    ],
+    "topics": [
+      "greedy",
+      "intervals"
+    ],
+    "description": "Learn to justify a local choice with an exchange argument.",
+    "recognition": "Scheduling non-overlapping intervals suggests earliest finishing time. Greedy choices need a proof, not just a plausible sort order.",
+    "pitfalls": "Picking shortest duration or earliest start is not generally optimal for maximum interval count.",
+    "cpp_example": "std::sort(jobs.begin(),jobs.end(),by_finish);\nfor(auto [start,finish]:jobs)\n  if(start>=last_finish){++answer;last_finish=finish;}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Interval scheduling counterexamples",
+        "prompt": "Implement earliest-finish scheduling. Construct counterexamples for earliest-start and shortest-duration strategies. Define whether touching endpoints overlap.",
+        "hints": [
+          "Replace the first chosen job with one finishing no later.",
+          "Apply the same argument to the remaining suffix."
+        ],
+        "solution": "The exchange argument preserves room for all later intervals. Sorting dominates at O(n log n). Test nested and identical intervals."
+      }
+    ]
+  },
+  {
+    "slug": "bits-number-theory",
+    "title": "Bits, modular arithmetic & number theory",
+    "order": 11,
+    "prerequisites": [
+      "cpp-stl"
+    ],
+    "topics": [
+      "bit-manipulation",
+      "math",
+      "number-theory",
+      "combinatorics"
+    ],
+    "description": "Work with masks, divisibility, fast powers, and combinatorial counts.",
+    "recognition": "Bitmasks model small subsets; Euclid handles gcd; repeated squaring handles huge exponents.",
+    "pitfalls": "Signed shifts and overflow can be undefined. Modular inverse is not available for every divisor.",
+    "cpp_example": "long long modpow(long long a,long long e,long long m){\n  long long r=1%m;\n  for(;e;e>>=1,a=(__int128)a*a%m)\n    if(e&1) r=(__int128)r*a%m;\n  return r;\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Sieve and factor queries",
+        "prompt": "Precompute the smallest prime factor for every integer up to N, then answer prime-factorization queries.",
+        "hints": [
+          "Mark a number only the first time it is reached.",
+          "Repeatedly divide by its smallest prime factor."
+        ],
+        "solution": "A classic sieve takes O(N log log N); factorization takes O(log x) divisions. Handle 1 separately. Compare gcd against std::gcd on small examples."
+      }
+    ]
+  },
+  {
+    "slug": "linear-structures",
+    "title": "Linked lists, stacks, queues & heaps",
+    "order": 12,
+    "prerequisites": [
+      "cpp-stl"
+    ],
+    "topics": [
+      "linked-lists",
+      "heap"
+    ],
+    "description": "Implement the data structures behind familiar STL interfaces.",
+    "recognition": "Use a stack for nested work, a queue for arrival order, and a heap for repeated minimum/maximum selection.",
+    "pitfalls": "Raw owning pointers require careful lifetime management. Prefer unique_ptr for ownership and avoid reference cycles.",
+    "cpp_example": "std::priority_queue<int,std::vector<int>,std::greater<int>> heap;\nheap.push(7); heap.push(2);\nint minimum=heap.top(); heap.pop();",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Implement a binary min-heap",
+        "prompt": "Implement push, top, and pop over a vector. Maintain parent <= children after every operation and compare with priority_queue.",
+        "hints": [
+          "Push bubbles a value upward.",
+          "Pop replaces the root with the last item, then sifts downward."
+        ],
+        "solution": "Push/pop take O(log n), top takes O(1). Reject operations on an empty heap. A bottom-up heapify builds a heap in O(n)."
+      }
+    ]
+  },
+  {
+    "slug": "monotonic-structures",
+    "title": "Monotonic stacks & queues",
+    "order": 13,
+    "prerequisites": [
+      "linear-structures",
+      "sliding-window"
+    ],
+    "topics": [
+      "monotonic-stack",
+      "monotonic-queue"
+    ],
+    "description": "Keep only candidates that can still influence a future answer.",
+    "recognition": "Next smaller/greater elements suggest a monotonic stack. Window extrema suggest a deque of indices.",
+    "pitfalls": "Equal values change strict versus non-strict answers. Expire indices that leave the window.",
+    "cpp_example": "for(int i=0;i<n;++i){\n  while(!st.empty() && a[st.back()]>=a[i]) st.pop_back();\n  previous[i]=st.empty()?-1:st.back();\n  st.push_back(i);\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Sliding maximum from scratch",
+        "prompt": "Implement an O(n) sliding-window maximum with a deque. Return an empty result for an invalid window length.",
+        "hints": [
+          "Remove expired indices from the front.",
+          "Remove dominated values from the back."
+        ],
+        "solution": "Each index enters and exits at most once, giving O(n) total work. Explain why a smaller earlier value cannot beat a larger later one."
+      }
+    ]
+  },
+  {
+    "slug": "dp-foundations",
+    "title": "Dynamic programming: states & transitions",
+    "order": 14,
+    "prerequisites": [
+      "recursion-backtracking"
+    ],
+    "topics": [
+      "dp"
+    ],
+    "description": "Turn repeated subproblems into a state table with explicit invariants.",
+    "recognition": "Define exactly what dp[state] means, list transitions, choose base cases, and derive an evaluation order.",
+    "pitfalls": "Memoizing an incomplete state yields wrong answers. Distinguish impossible states from valid zero values.",
+    "cpp_example": "std::vector<long long> dp(n+1,INF);\ndp[0]=0;\nfor(int i=1;i<=n;++i)\n  for(int step:steps) if(step<=i)\n    dp[i]=std::min(dp[i],dp[i-step]+1);",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Stairs with forbidden steps",
+        "prompt": "Count ways to reach step n using jumps of 1,2,3 while avoiding blocked steps. Solve first recursively with memoization, then bottom-up.",
+        "hints": [
+          "Let dp[i] count paths ending exactly at i.",
+          "Blocked states have zero ways; dp[0]=1 unless the start is blocked."
+        ],
+        "solution": "O(n) time, O(n) space or O(1) rolling state. Compare both methods on small n. State whether counts need a modulus."
+      }
+    ]
+  },
+  {
+    "slug": "dp-grid",
+    "title": "Grid DP",
+    "order": 15,
+    "prerequisites": [
+      "dp-foundations"
+    ],
+    "topics": [
+      "grid-dp"
+    ],
+    "description": "Track paths and costs through a directed grid of states.",
+    "recognition": "Moves restricted to right/down give a natural topological evaluation order.",
+    "pitfalls": "Blocked starts or ends matter. Initialize borders consistently and avoid adding to infinity.",
+    "cpp_example": "dp[0][0]=blocked[0][0]?0:1;\nfor(int r=0;r<h;++r) for(int c=0;c<w;++c){\n  if(blocked[r][c]) continue;\n  if(r) dp[r][c]+=dp[r-1][c];\n  if(c) dp[r][c]+=dp[r][c-1];\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Minimum path with reconstruction",
+        "prompt": "Find a minimum-cost right/down path and return the sequence of cells, not just the cost.",
+        "hints": [
+          "Store the chosen predecessor for each reachable cell.",
+          "Backtrack from the destination and reverse the path."
+        ],
+        "solution": "O(hw) time and space. If costs tie, define a deterministic tie-break. Test a single row, one cell, and an unreachable destination."
+      }
+    ]
+  },
+  {
+    "slug": "dp-knapsack",
+    "title": "Knapsack & subset sums",
+    "order": 16,
+    "prerequisites": [
+      "dp-foundations"
+    ],
+    "topics": [
+      "knapsack"
+    ],
+    "description": "Choose items under a budget and distinguish 0/1 from unbounded use.",
+    "recognition": "Capacity-based and value-based states trade dimensions. The iteration direction determines whether an item can be reused.",
+    "pitfalls": "Forward iteration accidentally turns 0/1 knapsack into unbounded knapsack.",
+    "cpp_example": "for(auto [weight,value]:items)\n  for(int cap=W;cap>=weight;--cap)\n    dp[cap]=std::max(dp[cap],dp[cap-weight]+value);",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "0/1 versus unbounded knapsack",
+        "prompt": "Implement both variants and construct an input where a forward 0/1 loop returns an impossible answer.",
+        "hints": [
+          "Use one item of weight 2 and value 3 with capacity 4.",
+          "Descending capacity preserves the previous-item layer."
+        ],
+        "solution": "O(nW) time and O(W) space. Explain pseudo-polynomial complexity and when value-indexed DP is preferable."
+      }
+    ]
+  },
+  {
+    "slug": "dp-subsequences",
+    "title": "Subsequence DP & LIS",
+    "order": 17,
+    "prerequisites": [
+      "dp-foundations",
+      "binary-search"
+    ],
+    "topics": [
+      "subsequence-dp",
+      "lis"
+    ],
+    "description": "Align sequences or maintain the best possible tail of each length.",
+    "recognition": "LCS/edit distance compare two prefixes. LIS uses smaller tails to preserve future extension opportunities.",
+    "pitfalls": "A tails array is not necessarily an actual subsequence. Strict and non-decreasing LIS use different bounds.",
+    "cpp_example": "std::vector<int> tails;\nfor(int x:a){\n  auto it=std::lower_bound(tails.begin(),tails.end(),x);\n  if(it==tails.end()) tails.push_back(x); else *it=x;\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Reconstruct an LIS",
+        "prompt": "Return the indices of one strictly increasing subsequence of maximum length in O(n log n).",
+        "hints": [
+          "Track the index associated with each tail length.",
+          "Store the predecessor index when placing each value."
+        ],
+        "solution": "Follow predecessors from the final tail and reverse. Use lower_bound for strict LIS. Test duplicate values and decreasing input."
+      }
+    ]
+  },
+  {
+    "slug": "dp-interval",
+    "title": "Interval DP & games",
+    "order": 18,
+    "prerequisites": [
+      "dp-foundations"
+    ],
+    "topics": [
+      "interval-dp",
+      "game-dp"
+    ],
+    "description": "Solve ranges by combining smaller ranges or choosing an endpoint.",
+    "recognition": "State dp[l][r] when the remaining work is a contiguous interval. Iterate by increasing length.",
+    "pitfalls": "Separate score difference from total score. A split transition may require cubic time.",
+    "cpp_example": "for(int len=2;len<=n;++len)\n  for(int l=0;l+len<=n;++l){\n    int r=l+len-1;\n    dp[l][r]=std::max(a[l]-dp[l+1][r],a[r]-dp[l][r-1]);\n  }",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Optimal take-from-ends game",
+        "prompt": "Two players take a value from either end. Return the optimal first-player score, allowing negative values.",
+        "hints": [
+          "Use the current player\u2019s score advantage as the state.",
+          "Total score and score difference determine the first player\u2019s score."
+        ],
+        "solution": "O(n\u00b2) time; O(n\u00b2) space or a carefully ordered rolling array. Do not assume choosing the larger endpoint is optimal."
+      }
+    ]
+  },
+  {
+    "slug": "dp-bitmask",
+    "title": "Bitmask & subset DP",
+    "order": 19,
+    "prerequisites": [
+      "dp-foundations",
+      "bits-number-theory"
+    ],
+    "topics": [
+      "bitmask-dp"
+    ],
+    "description": "Use a mask when the chosen subset is part of the state.",
+    "recognition": "Assignment, small-set routes, and subset partitioning often fit 2^n states.",
+    "pitfalls": "Check n before allocating. Enumerating every submask across every mask costs O(3^n).",
+    "cpp_example": "for(int mask=0;mask<(1<<n);++mask){\n  int person=std::popcount((unsigned)mask);\n  for(int j=0;j<n;++j) if(!(mask>>j&1) && allowed[person][j])\n    dp[mask|(1<<j)]+=dp[mask];\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Assignment counting",
+        "prompt": "Count perfect assignments for n<=20 given a compatibility matrix. Compare against permutation enumeration for n<=8.",
+        "hints": [
+          "The number of set bits identifies the next person.",
+          "Only add an unused compatible job."
+        ],
+        "solution": "O(n2^n) time, O(2^n) space. Set dp[0]=1. Use modular arithmetic when requested and unsigned masks for bit operations."
+      }
+    ]
+  },
+  {
+    "slug": "dp-digit-probability",
+    "title": "Digit DP & probability DP",
+    "order": 20,
+    "prerequisites": [
+      "dp-foundations",
+      "bits-number-theory"
+    ],
+    "topics": [
+      "digit-dp",
+      "probability-dp"
+    ],
+    "description": "Add only the state dimensions that influence future choices.",
+    "recognition": "Digit constraints need position, tightness, and relevant prefix information. Expectations often follow E=1+weighted future expectations.",
+    "pitfalls": "Leading zeroes change digit constraints. An expectation equation with self-loops must be algebraically rearranged.",
+    "cpp_example": "// State: position, digit sum modulo D, tight.\nfor(int digit=0;digit<=(tight?bound[pos]:9);++digit){\n  int next_sum=(sum+digit)%D;\n  bool next_tight=tight && digit==bound[pos];\n  // transition to pos+1\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Count digit sums in a range",
+        "prompt": "Count integers in [L,R] whose digit sum is divisible by D. Decide explicitly whether zero is included.",
+        "hints": [
+          "Implement count_up_to(X), then subtract count_up_to(L-1).",
+          "Track tightness to avoid enumerating beyond X."
+        ],
+        "solution": "O(number_of_digits * D * 10). Use brute force to validate small ranges. Include L=0 and powers of ten."
+      }
+    ]
+  },
+  {
+    "slug": "graph-traversal",
+    "title": "Graph traversal, BFS & bipartite graphs",
+    "order": 21,
+    "prerequisites": [
+      "linear-structures",
+      "recursion-backtracking"
+    ],
+    "topics": [
+      "graph-traversal",
+      "bfs",
+      "bipartite",
+      "cycles"
+    ],
+    "description": "Represent graphs and explore reachability, shortest unweighted paths, and coloring.",
+    "recognition": "BFS gives fewest edges in an unweighted graph. DFS discovers components and structural relationships.",
+    "pitfalls": "Mark BFS nodes when enqueuing. Deep recursive DFS may overflow the call stack.",
+    "cpp_example": "std::queue<int> q;\ndist[s]=0; q.push(s);\nwhile(!q.empty()){\n int u=q.front();q.pop();\n for(int v:adj[u]) if(dist[v]==-1){dist[v]=dist[u]+1;q.push(v);}\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Bipartite check with a witness",
+        "prompt": "Color every component with two colors. If impossible, return an odd cycle using parent pointers.",
+        "hints": [
+          "Neighbors need opposite colors.",
+          "A same-color edge joins two parent paths; find their common ancestor."
+        ],
+        "solution": "O(V+E) time. Disconnected components, self-loops, and isolated vertices must be handled. Validate the witness has odd length."
+      }
+    ]
+  },
+  {
+    "slug": "dag-dp",
+    "title": "Topological sorting & DAG DP",
+    "order": 22,
+    "prerequisites": [
+      "graph-traversal",
+      "dp-foundations"
+    ],
+    "topics": [
+      "topological-sort",
+      "dag-dp"
+    ],
+    "description": "Order dependencies and propagate information along directed acyclic graphs.",
+    "recognition": "An indegree-zero queue provides a dependency order. Fewer than V processed nodes implies a cycle.",
+    "pitfalls": "Longest-path DP is not valid on arbitrary cyclic graphs. Ignore unreachable states.",
+    "cpp_example": "std::queue<int> q;\nfor(int u=0;u<n;++u) if(!indegree[u]) q.push(u);\nwhile(!q.empty()){int u=q.front();q.pop();\n for(int v:adj[u]) if(--indegree[v]==0) q.push(v);\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Count paths in a DAG",
+        "prompt": "Count paths from s to t modulo M and reject cyclic input. Return zero when t is unreachable.",
+        "hints": [
+          "Topologically order all vertices first.",
+          "Initialize ways[s]=1 and propagate along each edge."
+        ],
+        "solution": "O(V+E). Decide whether parallel edges represent distinct paths. A cycle elsewhere still violates the stated DAG input contract."
+      }
+    ]
+  },
+  {
+    "slug": "dsu-mst",
+    "title": "Disjoint sets & minimum spanning trees",
+    "order": 23,
+    "prerequisites": [
+      "graph-traversal",
+      "sorting-frequency"
+    ],
+    "topics": [
+      "dsu",
+      "mst"
+    ],
+    "description": "Maintain connected components and connect them with minimum total edge cost.",
+    "recognition": "Union-find tracks merging sets. Kruskal considers edges from cheapest to most expensive.",
+    "pitfalls": "DSU does not support arbitrary deletions. An MST exists only when the graph is connected.",
+    "cpp_example": "int find(int x){return parent[x]==x?x:parent[x]=find(parent[x]);}\nvoid unite(int a,int b){a=find(a);b=find(b);if(a==b)return;\n if(size[a]<size[b])std::swap(a,b);parent[b]=a;size[a]+=size[b];}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Implement DSU and Kruskal",
+        "prompt": "Implement path compression and union by size. Return an MST\u2019s total cost and its selected edges, or report disconnection.",
+        "hints": [
+          "Count successful unions.",
+          "A connected graph requires exactly V-1 selected edges."
+        ],
+        "solution": "O(E log E) sorting plus nearly constant amortized DSU operations. Use 64-bit totals and allow negative edge weights."
+      }
+    ]
+  },
+  {
+    "slug": "shortest-paths",
+    "title": "Dijkstra, Bellman\u2013Ford & all-pairs paths",
+    "order": 24,
+    "prerequisites": [
+      "graph-traversal",
+      "linear-structures"
+    ],
+    "topics": [
+      "shortest-path"
+    ],
+    "description": "Choose a path algorithm based on weights and graph size.",
+    "recognition": "Dijkstra requires nonnegative weights; Bellman\u2013Ford handles negative edges; Floyd\u2013Warshall suits small dense graphs.",
+    "pitfalls": "Discard stale heap entries. Negative cycles require reachability reasoning. Never add weights to an infinite distance.",
+    "cpp_example": "while(!pq.empty()){auto [d,u]=pq.top();pq.pop();\n if(d!=dist[u])continue;\n for(auto [v,w]:adj[u]) if(d+w<dist[v]){\n  dist[v]=d+w;pq.push({dist[v],v});\n }}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Shortest path reconstruction",
+        "prompt": "Implement Dijkstra with predecessor tracking. Return the route and cost, or an explicit unreachable result.",
+        "hints": [
+          "Update parent only when improving a distance.",
+          "Stop reconstruction at the source; reverse the path."
+        ],
+        "solution": "O((V+E)log V). Validate every weight is nonnegative. Test parallel edges, zero weights, and a source equal to the target."
+      }
+    ]
+  },
+  {
+    "slug": "tree-dp",
+    "title": "Trees, tree DP & rerooting",
+    "order": 25,
+    "prerequisites": [
+      "graph-traversal",
+      "dp-foundations"
+    ],
+    "topics": [
+      "trees",
+      "tree-dp",
+      "rerooting"
+    ],
+    "description": "Aggregate subtrees and reuse results when changing the root.",
+    "recognition": "Trees have one simple path between vertices. Postorder combines child states; rerooting moves information across an edge.",
+    "pitfalls": "Avoid processing the parent as a child. A path-shaped tree may require iterative traversal.",
+    "cpp_example": "// sz[v] is subtree size; ans[u] is total distance from u.\nans[v]=ans[u]+n-2*sz[v];\n// Move the root from parent u to child v.",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "All-root distance sums",
+        "prompt": "Compute the sum of distances from every vertex to all others in O(n).",
+        "hints": [
+          "First compute subtree sizes and the sum from one root.",
+          "Across u->v, sz[v] nodes get closer and n-sz[v] get farther."
+        ],
+        "solution": "Two traversals, O(n) time and space. Use 64-bit answers. Verify on a chain, a star, and one vertex."
+      }
+    ]
+  },
+  {
+    "slug": "lifting-lca",
+    "title": "Binary lifting & lowest common ancestors",
+    "order": 26,
+    "prerequisites": [
+      "tree-dp"
+    ],
+    "topics": [
+      "binary-lifting",
+      "lca"
+    ],
+    "description": "Precompute powers of parent jumps for ancestry and distance queries.",
+    "recognition": "Repeated ancestor queries suggest binary lifting; LCA reduces path distance to depths.",
+    "pitfalls": "Keep root ancestor entries valid. Allocate enough levels for the maximum depth.",
+    "cpp_example": "for(int j=1;j<LOG;++j)\n for(int v=0;v<n;++v) up[v][j]=up[up[v][j-1]][j-1];\n// dist(u,v)=depth[u]+depth[v]-2*depth[lca(u,v)]",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Ancestor queries",
+        "prompt": "Answer kth-ancestor queries, returning -1 when the ancestor does not exist. Then extend to LCA.",
+        "hints": [
+          "Raise the deeper vertex to equal depth.",
+          "Lift both from the largest power downward while their ancestors differ."
+        ],
+        "solution": "O(n log n) preprocessing and O(log n) per query. Handle k=0, the root, and k exceeding depth."
+      }
+    ]
+  },
+  {
+    "slug": "range-structures",
+    "title": "Fenwick trees, segment trees & sparse tables",
+    "order": 27,
+    "prerequisites": [
+      "prefix-difference",
+      "binary-search"
+    ],
+    "topics": [
+      "fenwick",
+      "segment-tree",
+      "sparse-table",
+      "range-decomposition"
+    ],
+    "description": "Match the data structure to the operation and update model.",
+    "recognition": "Fenwick supports additive prefixes, segment trees support associative merges, and sparse tables handle static idempotent queries.",
+    "pitfalls": "A merge needs a correct identity. Lazy propagation must compose updates in the right order.",
+    "cpp_example": "void add(int i,long long x){for(++i;i<=n;i+=i&-i)bit[i]+=x;}\nlong long prefix(int i){long long s=0;for(;i;i-=i&-i)s+=bit[i];return s;}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Implement a range-sum library",
+        "prompt": "Implement Fenwick point-add/range-sum and segment-tree point-set/range-min interfaces. Cross-check random operations against an array.",
+        "hints": [
+          "Use half-open ranges at the API boundary.",
+          "A minimum-query identity can be numeric_limits<long long>::max()."
+        ],
+        "solution": "O(log n) updates/queries. Add a static sparse table for min and explain why overlapping blocks work for min but not sum. For offline Mo ordering, measure pointer movements and document its O((n+q)sqrt n) bound."
+      }
+    ]
+  },
+  {
+    "slug": "advanced-strings",
+    "title": "Tries, KMP & Z algorithm",
+    "order": 28,
+    "prerequisites": [
+      "string-basics",
+      "linear-structures"
+    ],
+    "topics": [
+      "trie",
+      "kmp",
+      "z-algorithm"
+    ],
+    "description": "Index shared prefixes and match patterns without rescanning text.",
+    "recognition": "Tries organize dictionary prefixes. Prefix/Z arrays reuse already established character matches.",
+    "pitfalls": "Reset KMP using failure links rather than restarting. For combined strings, choose a separator outside the alphabet.",
+    "cpp_example": "for(int i=1;i<n;++i){\n int j=pi[i-1];\n while(j>0 && s[i]!=s[j]) j=pi[j-1];\n if(s[i]==s[j])++j; pi[i]=j;\n}",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Overlapping pattern matches",
+        "prompt": "Implement KMP and return every start index, including overlaps. Compare with a naive matcher on randomized short strings.",
+        "hints": [
+          "After a full match, continue from pi[m-1].",
+          "Define the empty-pattern behavior explicitly."
+        ],
+        "solution": "O(n+m) time and O(m) state. For pattern aaa in aaaaa, return 0,1,2. Implement Z as a second linear-time solution."
+      }
+    ]
+  },
+  {
+    "slug": "scc",
+    "title": "Strongly connected components & 2-SAT",
+    "order": 29,
+    "prerequisites": [
+      "graph-traversal",
+      "dag-dp"
+    ],
+    "topics": [
+      "scc"
+    ],
+    "description": "Compress mutual reachability into a DAG and model logical implications.",
+    "recognition": "SCCs partition directed graphs. In 2-SAT, a variable and its negation cannot belong to the same SCC.",
+    "pitfalls": "Reverse finishing order correctly in Kosaraju. Assignment direction depends on the SCC numbering convention.",
+    "cpp_example": "// Clause (a OR b) creates implications:\nadd_edge(neg(a),b);\nadd_edge(neg(b),a);\n// Unsatisfiable if comp[x]==comp[neg(x)].",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Build the condensation graph",
+        "prompt": "Compute SCCs with Kosaraju, deduplicate component edges, and verify the condensed graph is acyclic.",
+        "hints": [
+          "First pass records finishing order.",
+          "Second pass traverses reversed edges in reverse finishing order."
+        ],
+        "solution": "O(V+E), aside from optional edge deduplication. Test a fully strongly connected graph and isolated vertices. Preserve original-to-component mapping."
+      }
+    ]
+  },
+  {
+    "slug": "bridges-articulation",
+    "title": "Bridges & articulation points",
+    "order": 30,
+    "prerequisites": [
+      "graph-traversal"
+    ],
+    "topics": [
+      "bridges",
+      "articulation"
+    ],
+    "description": "Find edges and vertices whose removal disconnects an undirected graph.",
+    "recognition": "Discovery times and low-link values capture whether a subtree has a back edge to an ancestor.",
+    "pitfalls": "Skip the parent edge ID, not every edge to the parent; parallel edges matter. DFS roots use a separate articulation rule.",
+    "cpp_example": "// After DFS from u into child v:\nlow[u]=std::min(low[u],low[v]);\nif(low[v]>tin[u]) bridges.push_back(edge_id);\nif(parent_edge!=-1 && low[v]>=tin[u]) cut[u]=true;",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Low-link implementation with multiedges",
+        "prompt": "Return all bridges and articulation vertices. Support disconnected graphs, parallel edges, and self-loops.",
+        "hints": [
+          "Track a unique ID for each undirected edge.",
+          "A DFS root is an articulation point only with more than one DFS child."
+        ],
+        "solution": "O(V+E). Validate by brute-force edge and vertex removal on small graphs. The strict bridge inequality differs from the articulation inequality."
+      }
+    ]
+  },
+  {
+    "slug": "euler-matching-flow",
+    "title": "Euler paths, matching & network flow",
+    "order": 31,
+    "prerequisites": [
+      "graph-traversal",
+      "shortest-paths"
+    ],
+    "topics": [
+      "euler-path",
+      "matching",
+      "flow"
+    ],
+    "description": "Learn edge-covering traversals, pair assignments, and capacity-constrained routing.",
+    "recognition": "Euler paths visit every edge; bipartite matching pairs vertices; residual networks allow flow to be revised.",
+    "pitfalls": "An Euler trail also needs connectivity. Reverse residual edges are essential for rerouting previous decisions.",
+    "cpp_example": "// Add paired residual edges.\ng[u].push_back({v,capacity,(int)g[v].size()});\ng[v].push_back({u,0,(int)g[u].size()-1});",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Bipartite matching via augmenting paths",
+        "prompt": "Implement maximum bipartite matching, then model it as unit-capacity max flow and compare the answers.",
+        "hints": [
+          "A DFS can reassign an already matched right vertex.",
+          "In the flow model, connect source->left and right->sink with capacity 1."
+        ],
+        "solution": "Simple augmenting matching is O(VE). For larger graphs use Hopcroft\u2013Karp or Dinic. Separately implement Hierholzer and verify every input edge is used exactly once."
+      }
+    ]
+  },
+  {
+    "slug": "dp-optimizations",
+    "title": "Matrix exponentiation & DP optimizations",
+    "order": 32,
+    "prerequisites": [
+      "dp-interval",
+      "range-structures",
+      "bits-number-theory"
+    ],
+    "topics": [
+      "matrix-exponentiation",
+      "dp-optimization"
+    ],
+    "description": "Recognize structured transitions and prove when optimization is valid.",
+    "recognition": "Linear recurrences suggest matrix powers. Quadratic transitions may become lines, Monge arrays, or monotone optimal split points.",
+    "pitfalls": "Do not apply divide-and-conquer or Knuth optimization without proving its assumptions. Overflow is common in cross-products.",
+    "cpp_example": "// Frog-style quadratic transition:\n// dp[j]+(h[i]-h[j])^2+C\n// = h[i]^2+C + min_j((-2*h[j])*h[i] + dp[j]+h[j]^2)\n// Maintain lines in a suitable convex hull or Li Chao tree.",
+    "exercises": [
+      {
+        "slug": "implementation",
+        "title": "Optimize a quadratic recurrence",
+        "prompt": "Implement a brute-force DP for dp[i]=min(j<i){dp[j]+(h[i]-h[j])\u00b2+C}, then a Li Chao tree version. Differential-test small random arrays.",
+        "hints": [
+          "Each previous state defines a line with slope -2*h[j].",
+          "Query at x=h[i], then add h[i]\u00b2+C."
+        ],
+        "solution": "A Li Chao tree handles arbitrary query order in O(n log X). Use a discrete-coordinate version or a bounded domain, and 128-bit intermediate arithmetic. Explain when a monotone hull could be simpler."
+      }
+    ]
+  }
+]
