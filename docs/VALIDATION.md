@@ -4,6 +4,9 @@ This record distinguishes implemented behavior from deployment checks actually r
 
 ## Passed
 
+- Windows PowerShell 5.1 CI: launcher syntax, first-run secret generation, repeat-run settings preservation, paths with spaces, rejection of unsafe/production settings, and propagation of native Docker failures. These checks run on `windows-latest`; the user must still run the launcher on their own Windows computer.
+- Chromium browser interaction checks: registration, queued email verification, login, journal creation, Chart.js rendering, required pages, practice progress, and a 390px mobile viewport. No JavaScript/resource errors remain after adding the favicon and SVG link icons.
+
 - **63 automated tests against PostgreSQL 17**, including two competing workers claiming the same email; exactly one send occurs.
 - Authentication email queuing, verification enforcement, CSRF, ownership tokens, expired challenges, cross-user journal protection, escaped notes, and production client-IP header handling.
 - Timezone/DST reminder scheduling, idempotent planning/delivery, rescheduling, late-reminder cancellation, signed unsubscribe, explicit SMTP rejection retry, and quarantine of uncertain delivery.
@@ -30,4 +33,4 @@ The HTTPS test uses Caddy's **local test CA**, not Let's Encrypt. Public DNS, re
 
 Ownership verification is covered with controlled profile fixtures. No real external account was claimed on behalf of a user. CodeChef/CSES linking remains capability-disabled; manual logging works. LeetCode remains entirely static and is never queried.
 
-GitHub Actions CI is configured on pushes and pull requests. Runs for commits `387707c` and `a91c761` completed successfully, including PostgreSQL tests and the production image build. The latest run is available in the repository Actions tab. These checks are not a substitute for deployment-specific load testing, independent security review, or browser/device compatibility testing.
+GitHub Actions CI is configured on pushes and pull requests. Runs for commits `387707c` and `a91c761` completed successfully, including PostgreSQL tests and the production image build. The latest run is available in the repository Actions tab. These checks are not a substitute for deployment-specific load testing, independent security review, or cross-browser/device testing beyond the Chromium checks above.
