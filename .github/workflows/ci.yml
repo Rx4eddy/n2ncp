@@ -51,3 +51,10 @@ jobs:
           push: false
           cache-from: type=gha
           cache-to: type=gha,mode=max
+  windows-setup:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Windows PowerShell startup and settings preservation
+        shell: powershell
+        run: .\scripts\Test-WindowsSetup.ps1

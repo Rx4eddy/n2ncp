@@ -30,6 +30,12 @@ CodeChef/CSES linking is deliberately disabled until a reliable public writable 
 
 **LeetCode is never fetched.** No adapter, API client, metadata fetch, scraper, or linking route exists for it. Seed imports are offline.
 
+## Windows: start the website
+
+With Docker Desktop running in Linux-container mode, download/clone this repository and double-click **`start-windows.cmd`**. It creates local settings, builds and starts the app, checks the web/email services, and opens your browser. No manual secret editing, Python, or Node installation is required for a new local setup.
+
+Create an account on port 8000, then open its verification email in the local inbox on port 8025. Emails stay on your computer. Double-click `stop-windows.cmd` to stop without losing data. See **[the Windows guide](docs/WINDOWS.md)** for ZIP extraction, troubleshooting, and existing-installation recovery.
+
 ## Quick start: Docker
 
 Requirements: Docker Engine with Compose v2, Git, and approximately 2 CPU cores / 4 GB RAM for a comfortable small deployment.
