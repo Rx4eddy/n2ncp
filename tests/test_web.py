@@ -178,3 +178,26 @@ def test_malformed_practice_target_rejected(logged_client):
 def test_reset_page_has_actual_form(client):
     body = client.get("/accounts/password/reset/").content.decode()
     assert 'name="email"' in body and 'type="submit"' in body
+
+
+def test_production_proxy_header_configuration(monkeypatch):
+    import importlib.util
+    from pathlib import Path
+
+    from allauth.account.adapter import get_adapter
+    from django.test import RequestFactory, override_settings
+
+    monkeypatch.setenv("DEBUG", "0")
+    monkeypatch.setenv("DATABASE_URL", "postgresql://test:test@localhost/test")
+    spec = importlib.util.spec_from_file_location(
+        "production_settings_check", Path(__file__).resolve().parents[1] / "config/settings.py"
+    )
+    production = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(production)
+    request = RequestFactory().get(
+        "/accounts/login/", HTTP_X_REAL_IP="203.0.113.42", REMOTE_ADDR="172.18.0.2"
+    )
+    with override_settings(
+        ALLAUTH_TRUSTED_CLIENT_IP_HEADER=production.ALLAUTH_TRUSTED_CLIENT_IP_HEADER
+    ):
+        assert get_adapter().get_client_ip(request) == "203.0.113.42"

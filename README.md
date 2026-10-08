@@ -105,7 +105,7 @@ This is a transparent rules-based engine, not a claim of machine-learned ability
 5. Prioritize suitable difficulty and patterns where the learner needed help. Diversify platforms among similarly scored candidates.
 6. Schedule reviews at 1, 3, 7, 14, 30, or 60 days according to the recorded outcome and review stage.
 
-Imported accepted submissions establish completion only. They do not establish independent mastery. Attempts are self-reported; there is no code execution/judging service. A local implementation exercise is completed by running C++ code locally; external problems are judged by their respective platform.
+Imported accepted submissions establish completion only. They do not establish independent mastery. Attempts are self-reported; there is no code execution/judging service. A local implementation exercise is completed by running C++ code locally (for example, `g++ -std=c++20 -O2 -Wall -Wextra solution.cpp -o solution` followed by `./solution`); external problems are judged by their respective platform.
 
 A module is complete after at least 60% of its exercises. Prerequisites guide recommendations; they do not lock users out of lessons. Difficulty 1–5 is an editorial scale, not an exact conversion between platform ratings. Pattern hints for external exercises are explicitly distinguished from problem-specific editorials.
 

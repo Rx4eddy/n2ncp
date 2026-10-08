@@ -81,6 +81,8 @@ docker compose -f docker-compose.prod.yml exec web python manage.py shell -c \
 
 Caddy automatically redirects HTTP to HTTPS and requests/renews certificates. Keep its `/data` volume. Do not use certificate-verification bypasses to make a broken deployment appear healthy.
 
+`check --deploy` may report `security.W021` because HSTS preload is intentionally disabled. Enable preload only after the domain owner has reviewed the browser preload requirements; do not suppress or blindly satisfy this advisory.
+
 ## 5. Verify the actual deployment
 
 ```bash
