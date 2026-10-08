@@ -12,6 +12,7 @@ This record distinguishes implemented behavior from deployment checks actually r
 - Seed repeatability, model-field validation, and an acyclic curriculum: **267 curated problems, 32 modules, 206 exercises**.
 - Python lint/format checks, JavaScript syntax/build checks, migration drift checks, and static-file collection.
 - npm production dependency audit: no reported vulnerabilities at validation time.
+- Development asset builds run as the local user; a container build followed by a host build succeeds without root-owned artifacts.
 - Both Compose configurations validate. Development and production multi-stage images build with TLS verification intact.
 - Full development stack starts: PostgreSQL, Redis, Mailpit, Django, Celery worker, and Beat. HTTP health checks and worker ping pass.
 - End-to-end development **and production HTTPS** flows: registration -> Beat -> Redis -> worker -> SMTP/Mailpit -> verification -> login -> required pages -> journal entry -> practice progress -> static assets.
@@ -29,4 +30,4 @@ The HTTPS test uses Caddy's **local test CA**, not Let's Encrypt. Public DNS, re
 
 Ownership verification is covered with controlled profile fixtures. No real external account was claimed on behalf of a user. CodeChef/CSES linking remains capability-disabled; manual logging works. LeetCode remains entirely static and is never queried.
 
-GitHub Actions CI is configured on pushes and pull requests. Local execution of its checks has passed; remote run status is reported separately when GitHub API access permits it. These checks are not a substitute for deployment-specific load testing, independent security review, or browser/device compatibility testing.
+GitHub Actions CI is configured on pushes and pull requests. Runs for commits `387707c` and `a91c761` completed successfully, including PostgreSQL tests and the production image build. The latest run is available in the repository Actions tab. These checks are not a substitute for deployment-specific load testing, independent security review, or browser/device compatibility testing.

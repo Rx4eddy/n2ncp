@@ -42,8 +42,11 @@ services:
     ports: ['127.0.0.1:8025:8025']
   assets:
     image: node:22-alpine
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    environment:
+      npm_config_cache: /tmp/npm-cache
     working_dir: /app
-    volumes: ['.:/app', 'node_modules:/app/node_modules']
+    volumes: ['.:/app']
     command: [sh, -c, 'npm ci --no-audit --no-fund && npm run build']
   init:
     <<: *app
@@ -78,4 +81,3 @@ services:
 volumes:
   postgres_data:
   redis_data:
-  node_modules:
